@@ -21,8 +21,8 @@ The AI's first draft of DECISIONS.md read like generic documentation — no spec
 ### Prompt 4: "Check the problem statement, check if cleaning is done properly, check if the dashboard is giving everything perfectly"
 Before building the dashboard, I told the AI to re-read the assignment and cross-check every number in the plan against the actual data. This caught approximate health score numbers in the plan that were off by 2–4 points — the ranking was right (Palm Grove = worst) but the exact numbers were wrong. Sloppy presentation in a client deliverable looks bad, so I made the AI recalculate with the exact formula before putting the numbers in DECISIONS.md.
 
-### Prompt 5: "Triple check — make me unrejectable"
-After the dashboard was built, I made the AI go back and audit everything from the CSV to the cleaning to the dashboard output. This audit found 3 improvements the AI had missed in the dashboard (see Mistakes 6–8 below).
+### Prompt 5: "Perform a final end-to-end audit against all requirements"
+After the dashboard was built, I made the AI go back and audit everything from the CSV to the cleaning to the dashboard output. I explicitly instructed it to verify every requirement as if preparing for a final client handover. This audit found 3 improvements the AI had missed in the dashboard (see Mistakes 6–8 below).
 
 ## Concrete Examples of AI Mistakes I Caught
 
