@@ -97,7 +97,12 @@ Health Score = (0.30 × Occupancy) + (0.25 × Revenue) + (0.25 × Cancellation) 
 
 ### Key Finding
 
-Palm Grove Inn scores lowest (**51.2/100**) despite having the highest nightly rate (₹5,582). The problem is its **51% cancellation rate** — more than half its bookings don't convert. That's where the client should focus. The health score correctly identifies this because it doesn't just look at revenue — it penalises unreliable bookings.
+Palm Grove Inn scores lowest (**51.2/100**) despite having the highest nightly rate (₹5,582). The problem is its **51% cancellation rate** — more than half its bookings don't convert (~₹4.1L of its booked value sits in cancelled/no-show). That's where the client should focus. The health score correctly identifies this because it doesn't just look at revenue — it penalises unreliable bookings.
+
+**Recommended actions for the client**
+1. Diagnose Palm Grove Inn's cancellation / no-show process (overbooking, confirmation lag, OTA mix).
+2. Double down on **Walk-In** (highest avg booking value ₹20,665, lowest cancel rate 33%) and renegotiate or re-qualify **Corporate** (avg ₹9,722, 53% cancel).
+3. Treat the ₹13.7L revenue-lost figure as the cost of inaction — not a vanity cancel %.
 
 ## Part B: Dashboard Design Decisions
 
@@ -121,6 +126,14 @@ The data reveals something the client should act on immediately:
 ### Revenue Lost metric
 I added a "Revenue Lost" KPI (₹13.7L lost to cancellations) because showing only realized revenue hides the cost of the cancellation problem. The client asked "where to focus" — knowing that cancellations are costing ₹13.7L makes the case for intervention concrete.
 
+### Filter-aware recommendations
+Charts answer "what happened." The brief also asks where to focus. Rather than a fourth tab of commentary, I added a short recommendation banner above the tabs that recalculates from the **current filter slice**:
+1. Highest-cancellation property in view
+2. Best vs weakest channel by value / cancel rate
+3. Revenue tied up in cancelled and no-show bookings
+
+Health Score callouts name the weakest component for the lowest-scoring property instead of always claiming "highest cancellation rate," which can be false when filters change.
+
 ### Edge case handling
 - **Zero-night bookings** (4 rows): Excluded from Average Daily Rate calculations to prevent division by zero.
 - **Missing nightly rates** (6 completed bookings): Their revenue is counted (the `total_amount_inr` exists) but they're excluded from avg rate calculations.
@@ -130,13 +143,14 @@ I added a "Revenue Lost" KPI (₹13.7L lost to cancellations) because showing on
 
 ## Assumptions
 1. `nightly_rate_inr × nights` is the source of truth for revenue when `total_amount_inr` is blatantly corrupted (negative or 10x off). Minor differences (taxes, discounts) are accepted.
-2. The client wants "realized revenue" (money actually earned), not "booked revenue" (including cancellations). The dashboard uses `realized_revenue` for all financial charts.
-3. Dates are Indian-format (DD/MM/YYYY) when ambiguous, because the hotel group is based in Bengaluru. The Jan–May 2026 range was used as a sanity check to catch format errors.
-4. "DLX" = "Deluxe" and "Std" = "Standard" — these are abbreviations used by some front-desk staff, not distinct room categories.
+2. The client wants "realized revenue" (money that is not cancelled), not "booked revenue" (including cancellations/no-shows). The dashboard uses `realized_revenue` for all financial charts.
+3. **Confirmed** bookings are included in realized revenue alongside **Checked-Out**. Confirmed has not yet completed stay, but excluding it would understate active pipeline (~₹11.6L of Confirmed vs ~₹11.7L Checked-Out). I treat Confirmed as committed revenue the property still expects to earn; Cancelled/No-Show remain ₹0. If the client later wants cash-collected-only reporting, Confirmed can be split out without changing the cleaning pipeline.
+4. Dates are Indian-format (DD/MM/YYYY) when ambiguous, because the hotel group is based in Bengaluru. The Jan–May 2026 range was used as a sanity check to catch format errors.
+5. "DLX" = "Deluxe" and "Std" = "Standard" — these are abbreviations used by some front-desk staff, not distinct room categories.
 
 ## What I Would Do Next With More Time
-- Investigate whether the 85 cancelled/no-show bookings cluster around specific properties or channels (the data already hints at this — Palm Grove Inn has 51% and Corporate channel has 53%).
-- Build a data quality score per property (e.g., "Cedar Court has 15% of its entries with data issues").
-- Add automated data validation that runs before the dashboard loads, alerting if new data has the same issues.
-- Add a month-over-month comparison view so the client can track if Palm Grove's cancellation rate is improving or worsening.
+- Dig deeper into Palm Grove × channel combinations (e.g. whether Corporate or a specific OTA drives most of the 51% cancel rate) beyond the summary banner.
+- Build a data quality score per property (share of rows with amount/date/channel flags).
+- Add automated validation that runs before the dashboard loads and alerts if new extracts reintroduce the same issues.
+- Add a month-over-month comparison so the client can see whether Palm Grove's cancellation rate is improving.
 

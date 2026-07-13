@@ -157,7 +157,7 @@ def clean_bookings(input_path, output_path):
     logging.info(f"Step 8 — Flagged {df['zero_night_anomaly'].sum()} rows with zero nights but positive amount.")
 
     # ── STEP 9: Flag missing booking channel ──────────────────────────────
-    # WHY: 29 rows have no booking channel. We keep these rows (they have
+    # WHY: 27 rows (after dedup) have no booking channel. We keep these rows (they have
     # valid revenue data) but flag them so the "which channels are worth it"
     # chart can note incomplete channel attribution.
     df['missing_channel_flag'] = df['booking_channel'].isna()

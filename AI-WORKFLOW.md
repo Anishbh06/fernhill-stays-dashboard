@@ -1,71 +1,78 @@
 # AI Workflow Log
 
 ## Tools Used
-- **Claude (AI assistant via Gemini Code Assist)**: Data cleaning script, dashboard code, audit scripts for cross-checking numbers, and initial drafts of documentation. Every output was manually reviewed and corrected (see mistakes below).
-- **Python 3.11 + Pandas/Plotly/Streamlit**: Data pipeline and dashboard. Chosen because the client asked for a "simple dashboard" — Streamlit is the fastest path from CSV to deployed interactive app.
-- **GitHub Desktop + Git CLI**: Branch-per-feature workflow (`feature/data-cleaning`, `feature/health-score-dashboard`). Each branch was reviewed before merging to main.
-- **VS Code**: Code editing, reviewing AI outputs side-by-side with raw data, and reading the CSV directly.
-- **Streamlit Cloud**: Free deployment, connected to the GitHub repo for automatic updates.
+- **AI assistants (Gemini Code Assist / Cursor)**: Drafted the data cleaning script, dashboard code, audit helpers for cross-checking numbers, and initial documentation. Every output was manually reviewed against the raw CSV and corrected (see mistakes below).
+- **Python 3.11 + Pandas / Plotly / Streamlit**: Data pipeline and dashboard. Chosen because the client asked for a simple dashboard — Streamlit is the fastest reliable path from CSV to a deployed interactive app.
+- **GitHub Desktop + Git CLI**: Branch-per-feature workflow (`feature/data-cleaning`, `feature/health-score-dashboard`). Changes were reviewed before merging to `main`.
+- **VS Code / Cursor**: Code editing, comparing AI output to the raw data, and reading the CSV directly.
+- **Streamlit Cloud**: Free deployment, connected to the GitHub repo for continuous updates.
 
 ## Prompts That Mattered
 
 ### Prompt 1: Setting the cleaning priority order
-I gave the AI a strict ordering for the cleaning steps — duplicates first, then amount mismatches, then cancellation exclusion, then cosmetic normalisation, then dates, then missing-value flagging, then edge cases. The AI doesn't know which data issues hurt the most; I had to decide the priority based on what silently corrupts money math vs. what's cosmetic. The AI followed the order, but the ordering itself was my decision.
+I gave the AI a strict order for cleaning — duplicates first, then amount mismatches, then cancellation exclusion, then cosmetic normalisation, then dates, then missing-value flagging, then edge cases. The AI does not know which issues silently corrupt money math versus which are cosmetic. The order was my decision; the AI executed it.
 
 ### Prompt 2: "Run a rigorous data validation against the raw source file"
-After the AI wrote the first version of `clean_data.py`, I asked it to write a separate script to verify the output against the raw data to ensure no silent data loss occurred. This is when the AI's own audit script revealed that its code had critical bugs (see below).
+After the first version of `clean_data.py`, I asked for a separate verification against the raw file to confirm no silent data loss. That audit script surfaced critical bugs in the AI's own cleaning code (see below).
 
 ### Prompt 3: Catching the generic DECISIONS.md
-The AI's first draft of DECISIONS.md read like generic documentation — no specific booking IDs, no exact numbers from the dataset, no first-person ownership. I flagged that the assignment explicitly says "a DECISIONS.md that reads like generic AI output with no specific reference to this dataset" is an automatic red flag. The AI rewrote it with specific row counts, booking IDs, and data-specific rationale.
+The first DECISIONS.md draft read like generic documentation — no booking IDs, no exact dataset counts, weak ownership. The assignment treats generic AI-sounding decision logs as a red flag. I required a rewrite with specific row counts, booking IDs, and dataset-specific rationale.
 
 ### Prompt 4: "Cross-reference the dashboard metrics against the business requirements"
-Before finalizing the dashboard, I told the AI to re-read the assignment and cross-check every KPI calculation against the actual data. This caught approximate health score numbers in the plan that were off by 2–4 points — the ranking was right (Palm Grove = worst) but the exact numbers were wrong. Sloppy presentation in a client deliverable looks bad, so I made the AI recalculate with the exact formula before putting the numbers in DECISIONS.md.
+Before locking the dashboard, I asked the AI to re-read the brief and recalculate every KPI from the cleaned data. Approximate health scores in the plan were off by 2–4 points — ranking was correct (Palm Grove worst), exact scores were not. Those numbers were recalculated before they entered DECISIONS.md.
 
 ### Prompt 5: "Perform a final end-to-end audit against all requirements"
-After the dashboard was built, I made the AI go back and audit everything from the CSV to the cleaning to the dashboard output. I explicitly instructed it to verify every requirement as if preparing for a final client handover. This audit found 3 improvements the AI had missed in the dashboard (see Mistakes 6–8 below).
+After the first complete dashboard, I asked for a full CSV → cleaning → UI audit as if preparing client handover. That pass produced Mistakes 6–8 below.
+
+### Prompt 6: "Make this client-ready — recommendations, not only charts"
+A final readiness pass: charts alone answer "what happened"; the client also asked "where should I focus." I required a concise, filter-aware recommendation banner and accurate health-score callouts so advice stays true when filters change. Documentation (README, DECISIONS, TEST-REPORT) was updated to match the shipped behaviour.
 
 ## Concrete Examples of AI Mistakes I Caught
 
 ### Mistake 1: Date parser silently broke 76% of the data
-The AI's first implementation used `pd.to_datetime(df['check_in_date'], dayfirst=True, errors='coerce')` as a single call. This silently failed on 175 out of 230 rows because `dayfirst=True` conflicts with ISO-format dates like `2026-01-25`. The dashboard would have had an almost entirely empty timeline chart with no error message.
+First implementation used `pd.to_datetime(..., dayfirst=True, errors='coerce')` in one call. That silently failed on 175 of 230 rows because `dayfirst=True` conflicts with ISO dates like `2026-01-25`. The timeline would have been nearly empty with no error.
 
-**How I caught it**: I asked the AI to triple-check everything. Its own audit script showed `Unparseable dates: 175`. I made it fix this with a two-pass approach (ISO first, then dayfirst for the rest) plus a range sanity check that caught 20 more day/month swaps.
+**How I caught it**: Triple-check audit showed `Unparseable dates: 175`. Fixed with two-pass parsing (ISO first, then `dayfirst` for the rest) plus a Jan–May 2026 range check that corrected 20 day/month swaps.
 
 ### Mistake 2: Room type abbreviations not unified
-The AI's text normalisation used `.str.title()` which turned "DLX" into "Dlx" and "Std" into "Std" — still separate from "Deluxe" and "Standard". The dashboard would have shown 5 room types instead of 3, with fragmented data in each.
+`.str.title()` turned "DLX" into "Dlx" and left "Std" separate from "Standard". The UI would have shown five room types instead of three.
 
-**How I caught it**: The deep audit printed `Room types: ['Dlx', 'Deluxe', 'Standard', 'Std', 'Suite']` — immediately obvious that abbreviations weren't being unified. Fixed by adding explicit mapping dictionaries.
+**How I caught it**: Audit printed `Room types: ['Dlx', 'Deluxe', 'Standard', 'Std', 'Suite']`. Fixed with explicit mapping dictionaries.
 
-### Mistake 3: 27 missing booking channels completely ignored
-The AI's first script didn't flag or acknowledge that 27 rows had no booking channel. Since the client specifically asked "which booking channels are worth it," silently losing 27 rows from that analysis would have been a problem.
+### Mistake 3: 27 missing booking channels ignored
+The first script neither flagged nor explained empty channels. The client specifically asked which channels are worth it — dropping attribution silently would bias that answer.
 
-**How I caught it**: The audit showed `booking_channel: 29 missing` (29 in the raw data, 27 after dedup). Added a `missing_channel_flag` column and logging.
+**How I caught it**: Audit showed 29 missing in raw data (27 after dedup). Added `missing_channel_flag` and UI note.
 
 ### Mistake 4: Missing nightly rates not tracked
-The AI only tracked missing `total_amount_inr` (3 rows) but ignored that 9 rows had missing `nightly_rate_inr`. Both are financial data gaps that should be visible.
+Only missing `total_amount_inr` (3 rows) was tracked; 9 missing `nightly_rate_inr` values were ignored.
 
-**How I caught it**: The audit output showed `nightly_rate_inr: 9 missing`. Added a `missing_rate_flag` column.
+**How I caught it**: Audit showed `nightly_rate_inr: 9 missing`. Added `missing_rate_flag`.
 
-### Mistake 5: Files created in wrong directory
-When I asked the AI to set up the project skeleton, it created all files in the outer workspace folder instead of inside the actual Git repository. I had to point out "I am already inside fernhill, why was it created inside again?" and the files had to be moved.
+### Mistake 5: Files created in the wrong directory
+Project skeleton files were created outside the Git repository root and had to be moved before version control reflected them.
 
-**How I caught it**: I noticed the files weren't showing up in the right place in GitHub Desktop.
+**How I caught it**: Files did not appear in the expected GitHub Desktop tree.
 
-### Mistake 6: Dashboard crashed when all filters deselected
-The AI's first dashboard version had no empty-state handling. If a user unchecked all properties in the sidebar, it would try to divide by zero when calculating cancellation rate (`len(cancelled) / len(fdf)` where `len(fdf) = 0`). A client demo crashing on a simple filter action is embarrassing.
+### Mistake 6: Dashboard crash when all filters deselected
+Empty filter selections could divide by zero when computing cancellation rate (`len(cancelled) / len(fdf)` with `len(fdf) = 0`).
 
-**How I caught it**: During the final audit I asked the AI to check edge cases in the UI. It found the division-by-zero risk and added a `st.stop()` guard with a user-friendly warning message.
+**How I caught it**: Edge-case UI audit. Added a warning and `st.stop()` guard.
 
 ### Mistake 7: No "Revenue Lost" metric
-The AI's first dashboard only showed "Realized Revenue" — what was earned. But the client also needs to know how much money was *lost* to cancellations and no-shows. Without that number, the 37% cancellation rate is abstract; with it (₹13.7L lost), the client can quantify the problem.
+First dashboard showed only realized revenue. A 37% cancel rate is abstract without the rupee cost (₹13.7L).
 
-**How I caught it**: During the dashboard audit, I reviewed each chart against the client's actual questions. "Where to focus" implies the client needs to see the cost of inaction — not just what's working but what's failing and how much it's costing.
+**How I caught it**: Mapped each chart back to "where should I focus?" Added the Revenue Lost KPI.
 
-### Mistake 8: No booking status or room type breakdown
-The AI's first Property Performance tab only had revenue charts. It was missing two views that a hotel operator would immediately want: (1) a status breakdown showing how many bookings per property are checked-out vs cancelled vs no-show, and (2) revenue by room type. These add context that revenue alone can't provide.
+### Mistake 8: No status or room-type breakdown
+Property Performance was revenue-only. Operators also need status mix (checked-out vs cancelled vs no-show) and room-type revenue share.
 
-**How I caught it**: I asked "is this the most optimal thing to give a client?" and realized the tab was revenue-only. Added a stacked status bar chart and a room type pie chart.
+**How I caught it**: Client-readiness review. Added stacked status bars and a room-type pie chart.
+
+### Mistake 9: Health-score alert overstated "highest cancellation rate"
+The callout always said the lowest-scoring property had the highest cancellation rate. That is true on the full dataset (Palm Grove) but can be false under filters.
+
+**How I caught it**: Final audit with alternate filter slices. Rewrote the alert to name the weakest health-score component and report cancel rate without claiming a global maximum.
 
 ## Takeaway
-The AI wrote 90% of the code, but every time I let it run without checking, it introduced silent bugs — the kind that don't throw errors but make the dashboard lie. Across both phases (cleaning and dashboard), I caught 8 distinct mistakes. The value I added was knowing what to check, catching what the AI missed, making scoping decisions (like the cleaning priority order and health score weights) that the AI couldn't make on its own, and pushing back when the output wasn't client-ready.
-
+The AI produced most of the code, but unreviewed output repeatedly introduced silent failures — bugs that do not crash and still make the dashboard wrong. Across cleaning, dashboard, and the final readiness pass I caught **9** distinct issues. My contribution was priority-setting, verification against the raw data, scoping (cleaning order, health-score weights), and pushing for a client-ready experience: accurate numbers, honest assumptions, and recommendations that stay correct when the view is filtered.

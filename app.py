@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
 
 # ── Page Config ───────────────────────────────────────────────────────────
 st.set_page_config(
@@ -93,6 +92,47 @@ k2.metric("📋 Total Bookings", f"{total_bookings}")
 k3.metric("❌ Cancellation Rate", f"{cancel_rate:.1f}%")
 k4.metric("🏷️ Avg Nightly Rate", f"₹{avg_rate:,.0f}")
 k5.metric("💸 Revenue Lost", f"₹{rev_lost:,.0f}", help="Potential revenue from cancelled/no-show bookings")
+
+# ── What to do next (client-facing, filter-aware) ─────────────────────────
+prop_cancel_rows = []
+for prop, g in fdf.groupby("property"):
+    prop_cancel_rows.append({
+        "property": prop,
+        "cancel_rate": len(g[g["status"].isin(["Cancelled", "No-Show"])]) / len(g),
+        "n": len(g),
+    })
+prop_cancel = pd.DataFrame(prop_cancel_rows)
+worst_prop_row = prop_cancel.sort_values(["cancel_rate", "n"], ascending=[False, False]).iloc[0]
+
+ch_stats = []
+for ch, g in fdf[fdf["booking_channel"].notna()].groupby("booking_channel"):
+    cc = g[g["status"].isin(["Checked-Out", "Confirmed"])]
+    cancel_n = len(g[g["status"].isin(["Cancelled", "No-Show"])])
+    ch_stats.append({
+        "channel": ch,
+        "cancel_rate": cancel_n / len(g),
+        "avg_value": cc["realized_revenue"].mean() if len(cc) else 0.0,
+        "n": len(g),
+    })
+ch_df = pd.DataFrame(ch_stats)
+best_ch = ch_df.sort_values(["avg_value", "cancel_rate"], ascending=[False, True]).iloc[0] if len(ch_df) else None
+worst_ch = ch_df.sort_values(["cancel_rate", "avg_value"], ascending=[False, True]).iloc[0] if len(ch_df) else None
+
+st.info(
+    f"**Where to focus (current filters)**\n\n"
+    f"1. **{worst_prop_row['property']}** — {worst_prop_row['cancel_rate']*100:.0f}% cancellation rate "
+    f"({int(worst_prop_row['n'])} bookings). Fix conversion before chasing rate.\n"
+    f"2. **Channels** — "
+    + (
+        f"lean into **{best_ch['channel']}** (avg ₹{best_ch['avg_value']:,.0f}, "
+        f"{best_ch['cancel_rate']*100:.0f}% cancel) and tighten **{worst_ch['channel']}** "
+        f"({worst_ch['cancel_rate']*100:.0f}% cancel, avg ₹{worst_ch['avg_value']:,.0f})."
+        if best_ch is not None and worst_ch is not None
+        else "apply a channel filter to compare value vs reliability."
+    )
+    + f"\n3. **Revenue at risk** — ₹{rev_lost:,.0f} tied up in cancelled/no-show bookings "
+    f"({cancel_rate:.0f}% of bookings in view)."
+)
 
 st.divider()
 
@@ -425,12 +465,22 @@ with tab3:
         score_table[col] = score_table[col].apply(lambda x: f"{x:.1f}")
     st.dataframe(score_table, use_container_width=True, hide_index=True)
 
-    # Interpretation
+    # Interpretation (reason from actual component gaps — not always "highest cancel")
     best = hdf.iloc[0]
     worst = hdf.iloc[-1]
+    gap_cols = {
+        "occupancy (room-nights)": "occ_score",
+        "revenue": "rev_score",
+        "cancellation reliability": "cancel_score",
+        "average rate": "rate_score",
+    }
+    weakest_component = min(gap_cols, key=lambda label: worst[gap_cols[label]])
     st.success(f"✅ **{best['property']}** is the strongest property (score: {best['health_score']:.0f}/100)")
-    st.error(f"🚨 **{worst['property']}** needs attention (score: {worst['health_score']:.0f}/100) — "
-             f"cancellation rate is {worst['cancel_rate']*100:.0f}%, the highest across all properties.")
+    st.error(
+        f"🚨 **{worst['property']}** needs attention (score: {worst['health_score']:.0f}/100). "
+        f"Weakest component: **{weakest_component}** "
+        f"(cancel rate {worst['cancel_rate']*100:.0f}%)."
+    )
 
     with st.expander("📐 How is the Health Score calculated?"):
         st.markdown("""

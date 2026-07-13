@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document covers testing performed on the Fernhill Stays dashboard before client delivery. I tested data integrity, edge cases in the cleaning pipeline, UI behaviour under different filter states, and cross-checked the dashboard numbers against manual calculations.
+Testing performed before client delivery: data integrity, cleaning edge cases, filter/UI behaviour (including the recommendation banner), and KPI cross-checks against manual calculations on `data/bookings_clean.csv`.
 
 ---
 
@@ -78,8 +78,13 @@ This document covers testing performed on the Fernhill Stays dashboard before cl
 
 ### Test 3.4: Charts use cleaned data
 - **What I tested**: Confirmed the dashboard reads `data/bookings_clean.csv`, not the raw file.
-- **How**: Checked line 16 of `app.py`: `df = pd.read_csv("data/bookings_clean.csv")`.
+- **How**: Checked `load_data()` in `app.py`: `pd.read_csv("data/bookings_clean.csv")`.
 - **Result**: ✅ Dashboard runs on cleaned data only. This is the assignment's #1 red flag and we avoid it.
+
+### Test 3.5: Filter-aware recommendations
+- **What I tested**: The "Where to focus" banner updates with filters and does not crash.
+- **How**: Full dataset → Palm Grove + Corporate highlighted; single-property filter → banner still renders a property and channel line.
+- **Result**: ✅ Recommendations stay consistent with the visible filtered slice.
 
 ---
 
