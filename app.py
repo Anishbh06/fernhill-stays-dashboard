@@ -2,14 +2,13 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# ── Page Config ───────────────────────────────────────────────────────────
+# ── Page config ───────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Fernhill Stays Dashboard",
     page_icon="🏨",
     layout="wide",
 )
 
-# ── Load & Prepare Data ──────────────────────────────────────────────────
 @st.cache_data
 def load_data():
     df = pd.read_csv("data/bookings_clean.csv")
@@ -19,7 +18,6 @@ def load_data():
 
 df = load_data()
 
-# ── Colour palette ────────────────────────────────────────────────────────
 PROPERTY_COLORS = {
     "Birchwood Stay": "#6366f1",
     "Cedar Court": "#06b6d4",
@@ -35,7 +33,7 @@ CHANNEL_COLORS = {
     "OTA-Booking": "#ef4444",
 }
 
-# ── Sidebar Filters ──────────────────────────────────────────────────────
+# ── Filters ───────────────────────────────────────────────────────────────
 st.sidebar.title("🔍 Filters")
 
 properties = st.sidebar.multiselect(
@@ -54,7 +52,6 @@ months = st.sidebar.multiselect(
     default=sorted(df["month"].dropna().unique()),
 )
 
-# Apply filters
 mask = (
     df["property"].isin(properties)
     & (df["booking_channel"].isin(channels) | df["booking_channel"].isna())
@@ -69,22 +66,19 @@ if len(fdf) == 0:
 completed = fdf[fdf["status"].isin(["Checked-Out", "Confirmed"])]
 cancelled = fdf[fdf["status"].isin(["Cancelled", "No-Show"])]
 
-# ── Header ────────────────────────────────────────────────────────────────
 st.title("🏨 Fernhill Stays — Performance Dashboard")
 st.caption(
     "Data: Jan–May 2026 · Cleaned from `bookings_jan_may_2026.csv` · "
     f"{len(fdf)} bookings shown"
 )
 
-# ── Top-level KPI Cards ──────────────────────────────────────────────────
+# ── KPIs ──────────────────────────────────────────────────────────────────
 k1, k2, k3, k4, k5 = st.columns(5)
 total_rev = completed["realized_revenue"].sum()
 total_bookings = len(fdf)
 cancel_rate = len(cancelled) / len(fdf) * 100 if len(fdf) > 0 else 0
-# Exclude zero-night and missing-rate rows from ADR
 adr_rows = completed[(completed["nights"] > 0) & (completed["nightly_rate_inr"].notna())]
 avg_rate = adr_rows["nightly_rate_inr"].mean() if len(adr_rows) > 0 else 0
-# Revenue lost to cancellations (what could have been earned)
 rev_lost = cancelled["total_amount_inr"].sum()
 
 k1.metric("💰 Realized Revenue", f"₹{total_rev:,.0f}")
@@ -93,7 +87,7 @@ k3.metric("❌ Cancellation Rate", f"{cancel_rate:.1f}%")
 k4.metric("🏷️ Avg Nightly Rate", f"₹{avg_rate:,.0f}")
 k5.metric("💸 Revenue Lost", f"₹{rev_lost:,.0f}", help="Potential revenue from cancelled/no-show bookings")
 
-# ── What to do next (client-facing, filter-aware) ─────────────────────────
+# Filter-aware focus summary
 prop_cancel_rows = []
 for prop, g in fdf.groupby("property"):
     prop_cancel_rows.append({
@@ -136,16 +130,13 @@ st.info(
 
 st.divider()
 
-# ── Tabs ──────────────────────────────────────────────────────────────────
 tab1, tab2, tab3 = st.tabs([
     "📊 Property Performance",
     "📡 Channel Analysis",
     "💯 Health Score",
 ])
 
-# ======================================================================
 # TAB 1: PROPERTY PERFORMANCE
-# ======================================================================
 with tab1:
     st.subheader("How is each property doing?")
 
@@ -243,9 +234,7 @@ with tab1:
         })
     st.dataframe(pd.DataFrame(prop_summary), use_container_width=True, hide_index=True)
 
-# ======================================================================
 # TAB 2: CHANNEL ANALYSIS
-# ======================================================================
 with tab2:
     st.subheader("Which booking channels are worth it?")
 
@@ -361,9 +350,7 @@ with tab2:
     if missing_ch > 0:
         st.info(f"ℹ️ {missing_ch} bookings have no channel recorded and are excluded from channel analysis. Their revenue is still counted in property totals.")
 
-# ======================================================================
 # TAB 3: HEALTH SCORE
-# ======================================================================
 with tab3:
     st.subheader("Property Health Score — Where to Focus")
     st.caption(
@@ -465,7 +452,6 @@ with tab3:
         score_table[col] = score_table[col].apply(lambda x: f"{x:.1f}")
     st.dataframe(score_table, use_container_width=True, hide_index=True)
 
-    # Interpretation (reason from actual component gaps — not always "highest cancel")
     best = hdf.iloc[0]
     worst = hdf.iloc[-1]
     gap_cols = {
@@ -498,14 +484,12 @@ with tab3:
 **Weakness:** Without room inventory, a property with more rooms naturally sells more room-nights. The score reflects output volume, not efficiency per room.
         """)
 
-# ── Footer ────────────────────────────────────────────────────────────────
 st.divider()
 st.caption(
     "Built for Fernhill Stays · Data cleaned via `clean_data.py` · "
     "Charts use `realized_revenue` (cancelled/no-show bookings excluded)"
 )
 
-# Data quality note
 with st.sidebar.expander("📋 Data Quality Notes"):
     st.markdown(f"""
 - **{len(df)}** bookings after deduplication
