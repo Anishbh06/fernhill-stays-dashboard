@@ -16,6 +16,12 @@ After the AI wrote the first version of `clean_data.py`, I asked it to go back a
 ### Prompt 3: Catching the generic DECISIONS.md
 The AI's first draft of DECISIONS.md read like generic documentation — no specific booking IDs, no exact numbers from the dataset, no first-person ownership. I flagged that the assignment explicitly says "a DECISIONS.md that reads like generic AI output with no specific reference to this dataset" is an automatic red flag. The AI rewrote it with specific row counts, booking IDs, and data-specific rationale.
 
+### Prompt 4: "Check the problem statement, check if cleaning is done properly, check if the dashboard is giving everything perfectly"
+Before building the dashboard, I told the AI to re-read the assignment and cross-check every number in the plan against the actual data. This caught approximate health score numbers in the plan that were off by 2–4 points — the ranking was right (Palm Grove = worst) but the exact numbers were wrong. Sloppy presentation in a client deliverable looks bad, so I made the AI recalculate with the exact formula before putting the numbers in DECISIONS.md.
+
+### Prompt 5: "Triple check — make me unrejectable"
+After the dashboard was built, I made the AI go back and audit everything from the CSV to the cleaning to the dashboard output. This audit found 3 improvements the AI had missed in the dashboard (see Mistakes 6–8 below).
+
 ## Concrete Examples of AI Mistakes I Caught
 
 ### Mistake 1: Date parser silently broke 76% of the data
@@ -43,5 +49,21 @@ When I asked the AI to set up the project skeleton, it created all files in the 
 
 **How I caught it**: I noticed the files weren't showing up in the right place in GitHub Desktop.
 
+### Mistake 6: Dashboard crashed when all filters deselected
+The AI's first dashboard version had no empty-state handling. If a user unchecked all properties in the sidebar, it would try to divide by zero when calculating cancellation rate (`len(cancelled) / len(fdf)` where `len(fdf) = 0`). A client demo crashing on a simple filter action is embarrassing.
+
+**How I caught it**: During the final audit I asked the AI to check edge cases in the UI. It found the division-by-zero risk and added a `st.stop()` guard with a user-friendly warning message.
+
+### Mistake 7: No "Revenue Lost" metric
+The AI's first dashboard only showed "Realized Revenue" — what was earned. But the client also needs to know how much money was *lost* to cancellations and no-shows. Without that number, the 37% cancellation rate is abstract; with it (₹16.5L lost), the client can quantify the problem.
+
+**How I caught it**: During the dashboard audit, I reviewed each chart against the client's actual questions. "Where to focus" implies the client needs to see the cost of inaction — not just what's working but what's failing and how much it's costing.
+
+### Mistake 8: No booking status or room type breakdown
+The AI's first Property Performance tab only had revenue charts. It was missing two views that a hotel operator would immediately want: (1) a status breakdown showing how many bookings per property are checked-out vs cancelled vs no-show, and (2) revenue by room type. These add context that revenue alone can't provide.
+
+**How I caught it**: I asked "is this the most optimal thing to give a client?" and realized the tab was revenue-only. Added a stacked status bar chart and a room type pie chart.
+
 ## Takeaway
-The AI wrote 90% of the code, but every time I let it run without checking, it introduced silent bugs — the kind that don't throw errors but make the dashboard lie. The value I added was knowing what to check, catching what the AI missed, and making scoping decisions (like the cleaning priority order) that the AI couldn't make on its own.
+The AI wrote 90% of the code, but every time I let it run without checking, it introduced silent bugs — the kind that don't throw errors but make the dashboard lie. Across both phases (cleaning and dashboard), I caught 8 distinct mistakes. The value I added was knowing what to check, catching what the AI missed, making scoping decisions (like the cleaning priority order and health score weights) that the AI couldn't make on its own, and pushing back when the output wasn't client-ready.
+

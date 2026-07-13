@@ -55,7 +55,78 @@ I wrote an audit script (`clean_data.py`) that processes the raw dataset in a st
 ---
 
 ## Health Score Definition
-*(To be defined in the next phase — this will be a composite metric with explicit weights and acknowledged trade-offs.)*
+
+The client asked for "an overall health score for each property so I know where to focus." The key phrase is **"where to focus"** — this is a diagnostic tool, not a vanity metric. It needs to surface underperforming properties, not just rename revenue.
+
+### Formula: Health Score (0–100)
+
+```
+Health Score = (0.30 × Occupancy) + (0.25 × Revenue) + (0.25 × Cancellation) + (0.20 × Rate)
+```
+
+| Component | Weight | What it measures | Normalisation |
+|---|---|---|---|
+| **Occupancy** | 30% | Room-nights sold | 0–100 vs. best property |
+| **Revenue** | 25% | Realized revenue | 0–100 vs. best property |
+| **Cancellation** | 25% | Inverse of cancel rate | Lower cancel = higher score |
+| **Rate** | 20% | Avg nightly rate (completed) | 0–100 vs. best property |
+
+### Actual Scores (Jan–May 2026)
+
+| Property | Occupancy | Revenue | Cancellation | Rate | **Health Score** |
+|---|---|---|---|---|---|
+| Marigold Suites | 100.0 | 100.0 | 100.0 | 86.4 | **97.3** ✅ |
+| Cedar Court | 45.8 | 46.5 | 82.1 | 86.6 | **63.2** |
+| Lakeview Residency | 47.6 | 48.5 | 62.7 | 92.3 | **60.6** |
+| Birchwood Stay | 31.5 | 31.8 | 74.4 | 91.6 | **54.3** |
+| Palm Grove Inn | 53.0 | 61.4 | 0.0 | 100.0 | **51.2** 🔴 |
+
+### Why these weights
+
+- **Occupancy (30%)**: Gets the most weight because a hotel with empty rooms is losing money every night regardless of rate.
+- **Revenue (25%)**: The bottom line — but not the only thing, because a high-revenue property with 50% cancellations has a problem.
+- **Cancellation (25%)**: Equally weighted to revenue because cancellations signal operational issues (overbooking, poor channel quality, guest experience).
+- **Rate (20%)**: Least weight because a low rate might be a deliberate strategy for a budget property, not a weakness.
+
+### What it deliberately excludes
+
+- **True occupancy %**: We don't have room inventory data, so we use room-nights sold as a proxy. A property with 10 rooms selling 50 nights looks the same as one with 100 rooms selling 50 nights.
+- **Seasonality**: The score is computed over the full Jan–May period. March had 100 bookings vs. January's 24 — the score treats all months equally.
+- **Guest satisfaction**: No review or rating data available.
+- **Cost/profit margins**: We only have revenue, not operating costs.
+
+### Key Finding
+
+Palm Grove Inn scores lowest (**51.2/100**) despite having the highest nightly rate (₹5,582). The problem is its **51% cancellation rate** — more than half its bookings don't convert. That's where the client should focus. The health score correctly identifies this because it doesn't just look at revenue — it penalises unreliable bookings.
+
+## Part B: Dashboard Design Decisions
+
+### Why Streamlit + Plotly
+I chose Streamlit because the client asked for a "simple dashboard" — not a React app, not a BI tool. Streamlit lets me build a clean, interactive UI in a single Python file that can be deployed for free. Plotly gives interactive hover tooltips and zoom on charts, which static matplotlib charts wouldn't.
+
+### Dashboard structure — 3 tabs matching 3 questions
+The client asked three questions. The dashboard has three tabs. Each tab maps directly to one question:
+1. **Property Performance** → "How is each property doing?"
+2. **Channel Analysis** → "Which booking channels are worth it?"
+3. **Health Score** → "Where should I focus?"
+
+I deliberately avoided adding extra tabs or features. The client didn't ask for guest demographics, room type optimization, or trend forecasting. Adding those would make the dashboard harder to navigate without answering the actual questions.
+
+### Key Channel Insight
+The data reveals something the client should act on immediately:
+- **Walk-In** is the most valuable channel — highest avg booking value (₹20,665) and lowest cancellation rate (33%).
+- **Corporate** is the least valuable — lowest avg booking value (₹9,722) and highest cancellation rate (53%).
+- This suggests the Corporate channel relationships may need renegotiation or the Corporate booking process has a confirmation gap.
+
+### Revenue Lost metric
+I added a "Revenue Lost" KPI (₹16.5L lost to cancellations) because showing only realized revenue hides the cost of the cancellation problem. The client asked "where to focus" — knowing that cancellations are costing ₹16.5L makes the case for intervention concrete.
+
+### Edge case handling
+- **Zero-night bookings** (4 rows): Excluded from Average Daily Rate calculations to prevent division by zero.
+- **Missing nightly rates** (6 completed bookings): Their revenue is counted (the `total_amount_inr` exists) but they're excluded from avg rate calculations.
+- **Empty filter state**: The dashboard shows a warning message instead of crashing. A client demo should never crash on a filter click.
+
+---
 
 ## Assumptions
 1. `nightly_rate_inr × nights` is the source of truth for revenue when `total_amount_inr` is blatantly corrupted (negative or 10x off). Minor differences (taxes, discounts) are accepted.
@@ -64,6 +135,8 @@ I wrote an audit script (`clean_data.py`) that processes the raw dataset in a st
 4. "DLX" = "Deluxe" and "Std" = "Standard" — these are abbreviations used by some front-desk staff, not distinct room categories.
 
 ## What I Would Do Next With More Time
-- Investigate whether the 85 cancelled/no-show bookings cluster around specific properties or channels (potential operational issue).
+- Investigate whether the 85 cancelled/no-show bookings cluster around specific properties or channels (the data already hints at this — Palm Grove Inn has 51% and Corporate channel has 53%).
 - Build a data quality score per property (e.g., "Cedar Court has 15% of its entries with data issues").
 - Add automated data validation that runs before the dashboard loads, alerting if new data has the same issues.
+- Add a month-over-month comparison view so the client can track if Palm Grove's cancellation rate is improving or worsening.
+
