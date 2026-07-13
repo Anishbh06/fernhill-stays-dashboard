@@ -1,9 +1,11 @@
 # AI Workflow Log
 
 ## Tools Used
-- **Claude (AI assistant)**: Used for writing the data cleaning script (`clean_data.py`), generating initial DECISIONS.md drafts, and running data audits.
-- **GitHub Desktop**: Version control and branch management.
-- **VS Code**: Code editing and review.
+- **Claude (AI assistant via Gemini Code Assist)**: Data cleaning script, dashboard code, audit scripts for cross-checking numbers, and initial drafts of documentation. Every output was manually reviewed and corrected (see mistakes below).
+- **Python 3.11 + Pandas/Plotly/Streamlit**: Data pipeline and dashboard. Chosen because the client asked for a "simple dashboard" — Streamlit is the fastest path from CSV to deployed interactive app.
+- **GitHub Desktop + Git CLI**: Branch-per-feature workflow (`feature/data-cleaning`, `feature/health-score-dashboard`). Each branch was reviewed before merging to main.
+- **VS Code**: Code editing, reviewing AI outputs side-by-side with raw data, and reading the CSV directly.
+- **Streamlit Cloud**: Free deployment, connected to the GitHub repo for automatic updates.
 
 ## Prompts That Mattered
 
