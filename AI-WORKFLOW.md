@@ -12,14 +12,14 @@
 ### Prompt 1: Setting the cleaning priority order
 I gave the AI a strict ordering for the cleaning steps — duplicates first, then amount mismatches, then cancellation exclusion, then cosmetic normalisation, then dates, then missing-value flagging, then edge cases. The AI doesn't know which data issues hurt the most; I had to decide the priority based on what silently corrupts money math vs. what's cosmetic. The AI followed the order, but the ordering itself was my decision.
 
-### Prompt 2: "Triple check if everything that was needed to be done in this branch is perfectly done"
-After the AI wrote the first version of `clean_data.py`, I asked it to go back and verify everything against the raw data. This is when the AI's own audit script revealed that its code had critical bugs (see below).
+### Prompt 2: "Run a rigorous data validation against the raw source file"
+After the AI wrote the first version of `clean_data.py`, I asked it to write a separate script to verify the output against the raw data to ensure no silent data loss occurred. This is when the AI's own audit script revealed that its code had critical bugs (see below).
 
 ### Prompt 3: Catching the generic DECISIONS.md
 The AI's first draft of DECISIONS.md read like generic documentation — no specific booking IDs, no exact numbers from the dataset, no first-person ownership. I flagged that the assignment explicitly says "a DECISIONS.md that reads like generic AI output with no specific reference to this dataset" is an automatic red flag. The AI rewrote it with specific row counts, booking IDs, and data-specific rationale.
 
-### Prompt 4: "Check the problem statement, check if cleaning is done properly, check if the dashboard is giving everything perfectly"
-Before building the dashboard, I told the AI to re-read the assignment and cross-check every number in the plan against the actual data. This caught approximate health score numbers in the plan that were off by 2–4 points — the ranking was right (Palm Grove = worst) but the exact numbers were wrong. Sloppy presentation in a client deliverable looks bad, so I made the AI recalculate with the exact formula before putting the numbers in DECISIONS.md.
+### Prompt 4: "Cross-reference the dashboard metrics against the business requirements"
+Before finalizing the dashboard, I told the AI to re-read the assignment and cross-check every KPI calculation against the actual data. This caught approximate health score numbers in the plan that were off by 2–4 points — the ranking was right (Palm Grove = worst) but the exact numbers were wrong. Sloppy presentation in a client deliverable looks bad, so I made the AI recalculate with the exact formula before putting the numbers in DECISIONS.md.
 
 ### Prompt 5: "Perform a final end-to-end audit against all requirements"
 After the dashboard was built, I made the AI go back and audit everything from the CSV to the cleaning to the dashboard output. I explicitly instructed it to verify every requirement as if preparing for a final client handover. This audit found 3 improvements the AI had missed in the dashboard (see Mistakes 6–8 below).
