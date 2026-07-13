@@ -232,7 +232,7 @@ with tab1:
             "Avg Rate (₹)": f"{adr:,.0f}" if pd.notna(adr) else "N/A",
             "Room-Nights": f"{pc['nights'].sum():.0f}",
         })
-    st.dataframe(pd.DataFrame(prop_summary), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(prop_summary), hide_index=True)
 
 # TAB 2: CHANNEL ANALYSIS
 with tab2:
@@ -343,7 +343,7 @@ with tab2:
             "Revenue (₹)": f"{cc['realized_revenue'].sum():,.0f}",
             "Avg Value (₹)": f"{cc['realized_revenue'].mean():,.0f}" if len(cc) > 0 else "N/A",
         })
-    st.dataframe(pd.DataFrame(ch_summary), use_container_width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(ch_summary), width='stretch', hide_index=True)
 
     # Note about missing channels
     missing_ch = fdf["booking_channel"].isna().sum()
@@ -450,7 +450,7 @@ with tab3:
     score_table.columns = ["Property", "Occupancy (30%)", "Revenue (25%)", "Cancellation (25%)", "Rate (20%)", "Health Score"]
     for col in score_table.columns[1:]:
         score_table[col] = score_table[col].apply(lambda x: f"{x:.1f}")
-    st.dataframe(score_table, use_container_width=True, hide_index=True)
+    st.dataframe(score_table, hide_index=True)
 
     best = hdf.iloc[0]
     worst = hdf.iloc[-1]
