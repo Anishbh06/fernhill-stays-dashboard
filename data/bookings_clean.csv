@@ -1,0 +1,231 @@
+booking_id,property,check_in_date,nights,room_type,guests,booking_channel,nightly_rate_inr,total_amount_inr,status,amount_error_flag,missing_rate_flag,missing_amount_flag,realized_revenue,zero_night_anomaly,missing_channel_flag
+BK1054,Marigold Suites,2026-01-25,1,Suite,1,Direct,7231.0,7231.0,Checked-Out,False,False,False,7231.0,False,False
+BK1150,Cedar Court,2026-03-09,1,Standard,2,Direct,7576.0,7576.0,Checked-Out,False,False,False,7576.0,False,False
+BK1206,Lakeview Residency,2026-02-02,3,Deluxe,1,OTA-MMT,3940.0,11820.0,Checked-Out,False,False,False,11820.0,False,False
+BK1197,Lakeview Residency,2026-04-03,2,Standard,1,OTA-MMT,6856.0,13712.0,No-Show,False,False,False,0.0,False,False
+BK1242,Marigold Suites,2026-01-22,2,Suite,2,Direct,6749.0,13498.0,Checked-Out,False,False,False,13498.0,False,False
+BK1118,Lakeview Residency,2026-03-16,3,Standard,2,OTA-MMT,2725.0,8175.0,Cancelled,True,False,False,0.0,False,False
+BK1177,Marigold Suites,2026-05-11,7,Deluxe,1,OTA-Booking,5585.0,39095.0,Checked-Out,False,False,False,39095.0,False,False
+BK1025,Lakeview Residency,2026-02-22,3,Suite,1,Corporate,4223.0,12669.0,No-Show,False,False,False,0.0,False,False
+BK1101,Palm Grove Inn,2026-01-09,1,Standard,2,Direct,4277.0,4277.0,No-Show,False,False,False,0.0,False,False
+BK1072,Cedar Court,2026-02-09,2,Standard,3,,4017.0,8034.0,Checked-Out,False,False,False,8034.0,False,True
+BK1076,Birchwood Stay,2026-03-21,7,Deluxe,3,Direct,3385.0,23695.0,No-Show,False,False,False,0.0,False,False
+BK1247,Cedar Court,2026-03-17,5,Deluxe,2,OTA-MMT,4041.0,20205.0,Cancelled,False,False,False,0.0,False,False
+BK1207,Palm Grove Inn,2026-03-07,2,Suite,1,Corporate,6620.0,13240.0,Cancelled,False,False,False,0.0,False,False
+BK1269,Marigold Suites,2026-03-21,5,Standard,3,Direct,4311.0,21555.0,Confirmed,False,False,False,21555.0,False,False
+BK1138,Lakeview Residency,2026-05-05,3,Deluxe,2,OTA-MMT,2992.0,8976.0,Checked-Out,False,False,False,8976.0,False,False
+BK1064,Palm Grove Inn,2026-03-16,2,Standard,2,Corporate,6987.0,13974.0,Checked-Out,False,False,False,13974.0,False,False
+BK1190,Cedar Court,2026-03-06,5,Standard,3,Direct,7014.0,35070.0,No-Show,False,False,False,0.0,False,False
+BK1109,Palm Grove Inn,2026-03-02,7,Standard,3,Walk-In,7611.0,53277.0,Checked-Out,False,False,False,53277.0,False,False
+BK1246,Birchwood Stay,2026-03-12,7,Deluxe,2,OTA-MMT,5376.0,37632.0,Confirmed,False,False,False,37632.0,False,False
+BK1248,Palm Grove Inn,2026-02-06,4,Standard,4,OTA-Booking,,30644.0,Cancelled,False,True,False,0.0,False,False
+BK1231,Lakeview Residency,2026-04-20,2,Deluxe,2,Walk-In,4009.0,,Checked-Out,False,False,True,0.0,False,False
+BK1036,Lakeview Residency,2026-03-20,4,Standard,2,OTA-MMT,6627.0,26508.0,Checked-Out,False,False,False,26508.0,False,False
+BK1147,Birchwood Stay,2026-03-18,4,Deluxe,3,Direct,7379.0,29516.0,Confirmed,False,False,False,29516.0,False,False
+BK1165,Lakeview Residency,2026-03-24,4,Suite,2,OTA-Booking,4033.0,16132.0,Checked-Out,False,False,False,16132.0,False,False
+BK1172,Palm Grove Inn,2026-04-27,1,Deluxe,2,,3539.0,3539.0,Cancelled,False,False,False,0.0,False,True
+BK1087,Marigold Suites,2026-03-19,4,Standard,1,,7302.0,29208.0,Checked-Out,False,False,False,29208.0,False,True
+BK1157,Lakeview Residency,2026-05-10,3,Standard,4,Direct,7361.0,22083.0,Confirmed,False,False,False,22083.0,False,False
+BK1225,Palm Grove Inn,2026-04-08,1,Standard,1,Direct,3606.0,3606.0,Confirmed,False,False,False,3606.0,False,False
+BK1023,Lakeview Residency,2026-04-17,2,Standard,4,Direct,3020.0,6040.0,Confirmed,False,False,False,6040.0,False,False
+BK1155,Birchwood Stay,2026-04-11,3,Deluxe,3,OTA-Booking,3016.0,9048.0,Cancelled,False,False,False,0.0,False,False
+BK1106,Lakeview Residency,2026-02-03,2,Deluxe,2,Corporate,5421.0,10842.0,Confirmed,False,False,False,10842.0,False,False
+BK1091,Palm Grove Inn,2026-03-21,3,Deluxe,1,Direct,2992.0,8976.0,Confirmed,False,False,False,8976.0,False,False
+BK1214,Marigold Suites,2026-03-03,2,Deluxe,2,OTA-MMT,2723.0,5446.0,Checked-Out,True,False,False,5446.0,False,False
+BK1274,Palm Grove Inn,2026-05-06,4,Standard,2,Direct,3161.0,12644.0,No-Show,False,False,False,0.0,False,False
+BK1236,Palm Grove Inn,2026-01-27,5,Standard,3,Corporate,7011.0,35055.0,Cancelled,False,False,False,0.0,False,False
+BK1004,Palm Grove Inn,2026-05-07,1,Deluxe,1,Walk-In,2733.0,2733.0,Cancelled,False,False,False,0.0,False,False
+BK1058,Lakeview Residency,2026-02-04,3,Standard,2,Corporate,7323.0,21969.0,Confirmed,False,False,False,21969.0,False,False
+BK1168,Marigold Suites,2026-05-27,7,Suite,4,Direct,3749.0,26243.0,No-Show,False,False,False,0.0,False,False
+BK1102,Palm Grove Inn,2026-03-20,2,Deluxe,3,Direct,6564.0,13128.0,Confirmed,False,False,False,13128.0,False,False
+BK1034,Lakeview Residency,2026-04-01,3,Deluxe,1,OTA-MMT,3494.0,10482.0,Cancelled,False,False,False,0.0,False,False
+BK1266,Lakeview Residency,2026-03-21,1,Deluxe,4,Direct,,3466.0,Checked-Out,False,True,False,3466.0,False,False
+BK1290,Marigold Suites,2026-03-09,7,Deluxe,3,Direct,2935.0,20545.0,Checked-Out,False,False,False,20545.0,False,False
+BK1218,Marigold Suites,2026-02-08,2,Standard,4,OTA-MMT,5739.0,11478.0,Confirmed,False,False,False,11478.0,False,False
+BK1049,Cedar Court,2026-05-26,2,Standard,2,OTA-MMT,4124.0,8248.0,Confirmed,False,False,False,8248.0,False,False
+BK1134,Marigold Suites,2026-02-08,2,Suite,4,Corporate,2979.0,5958.0,No-Show,False,False,False,0.0,False,False
+BK1256,Birchwood Stay,2026-03-04,1,Standard,3,Walk-In,4427.0,4427.0,No-Show,False,False,False,0.0,False,False
+BK1044,Palm Grove Inn,2026-04-15,3,Deluxe,4,,7453.0,22359.0,Checked-Out,False,False,False,22359.0,False,True
+BK1099,Palm Grove Inn,2026-04-26,3,Deluxe,2,Walk-In,6846.0,20538.0,Cancelled,False,False,False,0.0,False,False
+BK1272,Marigold Suites,2026-03-26,5,Standard,2,Walk-In,3736.0,18680.0,Confirmed,False,False,False,18680.0,False,False
+BK1089,Marigold Suites,2026-03-20,5,Standard,4,OTA-MMT,6582.0,32910.0,Cancelled,False,False,False,0.0,False,False
+BK1030,Marigold Suites,2026-03-22,1,Deluxe,2,Direct,3773.0,3773.0,Checked-Out,False,False,False,3773.0,False,False
+BK1014,Cedar Court,2026-01-03,7,Deluxe,1,Direct,7270.0,50890.0,Confirmed,False,False,False,50890.0,False,False
+BK1151,Palm Grove Inn,2026-03-26,1,Suite,2,,6934.0,6934.0,Confirmed,False,False,False,6934.0,False,True
+BK1082,Palm Grove Inn,2026-03-17,3,Deluxe,1,OTA-MMT,4394.0,13182.0,No-Show,False,False,False,0.0,False,False
+BK1142,Marigold Suites,2026-02-25,7,Suite,1,Direct,3905.0,27335.0,No-Show,False,False,False,0.0,False,False
+BK1199,Marigold Suites,2026-03-07,1,Deluxe,2,OTA-MMT,2534.0,2534.0,Confirmed,False,False,False,2534.0,False,False
+BK1085,Palm Grove Inn,2026-02-19,5,Deluxe,2,Direct,3320.0,16600.0,Checked-Out,False,False,False,16600.0,False,False
+BK1282,Birchwood Stay,2026-02-15,7,Deluxe,2,OTA-MMT,3616.0,25312.0,Confirmed,False,False,False,25312.0,False,False
+BK1178,Birchwood Stay,2026-03-18,3,Deluxe,3,,3204.0,9612.0,Checked-Out,False,False,False,9612.0,False,True
+BK1003,Marigold Suites,2026-03-28,4,Standard,3,OTA-MMT,5470.0,21880.0,Confirmed,False,False,False,21880.0,False,False
+BK1071,Cedar Court,2026-03-18,1,Deluxe,2,OTA-MMT,2902.0,2902.0,Checked-Out,False,False,False,2902.0,False,False
+BK1195,Marigold Suites,2026-01-18,1,Suite,2,OTA-MMT,2983.0,2983.0,Checked-Out,False,False,False,2983.0,False,False
+BK1145,Marigold Suites,2026-05-12,2,Standard,3,Walk-In,5626.0,11252.0,Confirmed,False,False,False,11252.0,False,False
+BK1193,Marigold Suites,2026-03-22,2,Deluxe,1,Direct,7097.0,14194.0,No-Show,False,False,False,0.0,False,False
+BK1026,Palm Grove Inn,2026-02-12,1,Deluxe,1,Corporate,3278.0,3278.0,Cancelled,False,False,False,0.0,False,False
+BK1137,Birchwood Stay,2026-05-08,3,Standard,2,Walk-In,7680.0,23040.0,Checked-Out,False,False,False,23040.0,False,False
+BK1250,Palm Grove Inn,2026-04-14,7,Standard,2,,4071.0,28497.0,Checked-Out,True,False,False,28497.0,False,True
+BK1017,Marigold Suites,2026-01-02,4,Standard,2,OTA-MMT,3026.0,12104.0,Checked-Out,False,False,False,12104.0,False,False
+BK1094,Palm Grove Inn,2026-03-15,4,Deluxe,3,Walk-In,5506.0,22024.0,Checked-Out,False,False,False,22024.0,False,False
+BK1152,Marigold Suites,2026-03-10,7,Suite,3,OTA-MMT,5636.0,39452.0,Checked-Out,False,False,False,39452.0,False,False
+BK1220,Palm Grove Inn,2026-03-21,0,Deluxe,2,Corporate,2915.0,2915.0,Cancelled,False,False,False,0.0,True,False
+BK1131,Marigold Suites,2026-04-10,3,Standard,1,Direct,6653.0,19959.0,Confirmed,False,False,False,19959.0,False,False
+BK1069,Lakeview Residency,2026-05-01,2,Standard,1,,7776.0,15552.0,Confirmed,False,False,False,15552.0,False,True
+BK1120,Marigold Suites,2026-03-15,1,Standard,2,OTA-MMT,7520.0,7520.0,No-Show,False,False,False,0.0,False,False
+BK1070,Palm Grove Inn,2026-03-28,5,Standard,2,OTA-MMT,3782.0,18910.0,No-Show,False,False,False,0.0,False,False
+BK1066,Cedar Court,2026-03-25,2,Standard,2,Direct,3121.0,6242.0,Checked-Out,False,False,False,6242.0,False,False
+BK1271,Cedar Court,2026-02-23,1,Standard,2,OTA-Booking,3408.0,3408.0,Confirmed,False,False,False,3408.0,False,False
+BK1153,Birchwood Stay,2026-01-03,5,Suite,1,OTA-MMT,3725.0,18625.0,Checked-Out,False,False,False,18625.0,False,False
+BK1149,Marigold Suites,2026-03-02,4,Deluxe,4,Walk-In,3727.0,14908.0,Confirmed,False,False,False,14908.0,False,False
+BK1040,Marigold Suites,2026-03-05,1,Suite,2,Corporate,2750.0,2750.0,Checked-Out,False,False,False,2750.0,False,False
+BK1162,Marigold Suites,2026-05-09,2,Deluxe,2,Walk-In,6810.0,13620.0,Checked-Out,False,False,False,13620.0,False,False
+BK1012,Marigold Suites,2026-03-14,2,Suite,2,Walk-In,3903.0,7806.0,Confirmed,False,False,False,7806.0,False,False
+BK1039,Birchwood Stay,2026-04-22,2,Standard,3,Direct,5684.0,11368.0,No-Show,False,False,False,0.0,False,False
+BK1033,Cedar Court,2026-03-27,2,Standard,2,Corporate,2924.0,5848.0,Cancelled,False,False,False,0.0,False,False
+BK1204,Cedar Court,2026-01-18,5,Deluxe,2,Walk-In,4470.0,22350.0,No-Show,False,False,False,0.0,False,False
+BK1002,Palm Grove Inn,2026-02-15,3,Deluxe,3,Corporate,7206.0,21618.0,No-Show,False,False,False,0.0,False,False
+BK1164,Palm Grove Inn,2026-02-26,5,Suite,3,Walk-In,3664.0,18320.0,No-Show,True,False,False,0.0,False,False
+BK1129,Palm Grove Inn,2026-04-17,2,Suite,4,Corporate,2961.0,5922.0,Confirmed,False,False,False,5922.0,False,False
+BK1111,Palm Grove Inn,2026-03-14,4,Standard,2,Corporate,7664.0,30656.0,No-Show,False,False,False,0.0,False,False
+BK1226,Lakeview Residency,2026-05-22,5,Standard,3,OTA-MMT,2802.0,14010.0,Checked-Out,False,False,False,14010.0,False,False
+BK1016,Cedar Court,2026-03-15,7,Suite,1,Corporate,2753.0,19271.0,No-Show,False,False,False,0.0,False,False
+BK1135,Lakeview Residency,2026-03-06,2,Deluxe,1,OTA-Booking,7369.0,14738.0,No-Show,False,False,False,0.0,False,False
+BK1027,Palm Grove Inn,2026-03-04,1,Standard,2,Walk-In,7066.0,7066.0,Checked-Out,False,False,False,7066.0,False,False
+BK1141,Marigold Suites,2026-02-13,1,Deluxe,2,OTA-MMT,3429.0,3429.0,Cancelled,False,False,False,0.0,False,False
+BK1277,Lakeview Residency,2026-03-11,1,Standard,2,OTA-MMT,5667.0,5667.0,Cancelled,False,False,False,0.0,False,False
+BK1037,Palm Grove Inn,2026-04-22,2,Deluxe,2,OTA-Booking,,11564.0,No-Show,False,True,False,0.0,False,False
+BK1210,Lakeview Residency,2026-04-02,2,Suite,2,Corporate,6649.0,13298.0,Cancelled,False,False,False,0.0,False,False
+BK1179,Palm Grove Inn,2026-05-22,5,Suite,2,Walk-In,4253.0,21265.0,Confirmed,True,False,False,21265.0,False,False
+BK1056,Marigold Suites,2026-03-25,4,Standard,2,Corporate,,12068.0,Checked-Out,False,True,False,12068.0,False,False
+BK1181,Cedar Court,2026-05-09,3,Deluxe,1,,3011.0,9033.0,Checked-Out,True,False,False,9033.0,False,True
+BK1252,Palm Grove Inn,2026-02-14,1,Standard,4,Direct,6753.0,6753.0,Confirmed,False,False,False,6753.0,False,False
+BK1019,Cedar Court,2026-03-04,5,Standard,2,,3633.0,18165.0,Checked-Out,False,False,False,18165.0,False,True
+BK1146,Lakeview Residency,2026-04-12,3,Standard,4,,6516.0,19548.0,Checked-Out,True,False,False,19548.0,False,True
+BK1167,Cedar Court,2026-04-16,3,Standard,2,OTA-Booking,3923.0,11769.0,Confirmed,False,False,False,11769.0,False,False
+BK1184,Lakeview Residency,2026-04-06,3,Standard,2,OTA-Booking,2509.0,7527.0,No-Show,False,False,False,0.0,False,False
+BK1104,Lakeview Residency,2026-04-09,1,Standard,2,OTA-MMT,6879.0,6879.0,Confirmed,False,False,False,6879.0,False,False
+BK1133,Marigold Suites,2026-04-21,0,Suite,3,OTA-MMT,7330.0,29320.0,Confirmed,False,False,False,29320.0,True,False
+BK1285,Cedar Court,2026-04-28,7,Deluxe,1,Walk-In,5763.0,40341.0,Confirmed,False,False,False,40341.0,False,False
+BK1216,Palm Grove Inn,2026-05-14,1,Standard,2,Direct,,3042.0,Confirmed,False,True,False,3042.0,False,False
+BK1208,Palm Grove Inn,2026-04-18,4,Suite,2,Direct,3467.0,13868.0,No-Show,False,False,False,0.0,False,False
+BK1028,Palm Grove Inn,2026-01-21,5,Suite,1,,7483.0,37415.0,Confirmed,False,False,False,37415.0,False,True
+BK1097,Birchwood Stay,2026-05-26,4,Suite,3,,3094.0,12376.0,Checked-Out,False,False,False,12376.0,False,True
+BK1126,Birchwood Stay,2026-03-04,7,Suite,2,Direct,4210.0,29470.0,Checked-Out,True,False,False,29470.0,False,False
+BK1139,Cedar Court,2026-04-17,2,Deluxe,1,OTA-MMT,7647.0,15294.0,Cancelled,False,False,False,0.0,False,False
+BK1067,Marigold Suites,2026-03-06,3,Suite,2,Corporate,3046.0,9138.0,Checked-Out,True,False,False,9138.0,False,False
+BK1098,Marigold Suites,2026-01-19,4,Suite,2,Direct,6634.0,26536.0,No-Show,False,False,False,0.0,False,False
+BK1115,Birchwood Stay,2026-03-23,3,Standard,1,Walk-In,3559.0,10677.0,Checked-Out,False,False,False,10677.0,False,False
+BK1198,Marigold Suites,2026-05-14,5,Suite,2,Direct,7435.0,37175.0,No-Show,False,False,False,0.0,False,False
+BK1211,Marigold Suites,2026-04-19,2,Suite,2,Corporate,4463.0,8926.0,Checked-Out,False,False,False,8926.0,False,False
+BK1022,Marigold Suites,2026-03-26,7,Standard,1,OTA-MMT,3633.0,25431.0,No-Show,False,False,False,0.0,False,False
+BK1187,Lakeview Residency,2026-02-06,5,Deluxe,1,Walk-In,7637.0,38185.0,Checked-Out,False,False,False,38185.0,False,False
+BK1279,Lakeview Residency,2026-03-04,2,Standard,2,Direct,5443.0,10886.0,Checked-Out,False,False,False,10886.0,False,False
+BK1221,Marigold Suites,2026-03-19,1,Standard,1,,5243.0,5243.0,Checked-Out,False,False,False,5243.0,False,True
+BK1051,Marigold Suites,2026-05-01,5,Deluxe,1,,5777.0,28885.0,Confirmed,False,False,False,28885.0,False,True
+BK1123,Lakeview Residency,2026-01-17,1,Suite,4,Corporate,5722.0,5722.0,Checked-Out,False,False,False,5722.0,False,False
+BK1166,Palm Grove Inn,2026-01-10,5,Deluxe,4,Corporate,7628.0,38140.0,Confirmed,False,False,False,38140.0,False,False
+BK1075,Marigold Suites,2026-03-20,3,Standard,3,Direct,2593.0,7779.0,Checked-Out,False,False,False,7779.0,False,False
+BK1230,Birchwood Stay,2026-02-09,3,Standard,1,OTA-Booking,3704.0,11112.0,Checked-Out,False,False,False,11112.0,False,False
+BK1257,Birchwood Stay,2026-03-21,4,Standard,1,Direct,7264.0,29056.0,Checked-Out,False,False,False,29056.0,False,False
+BK1286,Marigold Suites,2026-04-12,1,Deluxe,4,Corporate,5800.0,5800.0,Checked-Out,False,False,False,5800.0,False,False
+BK1280,Marigold Suites,2026-04-23,4,Deluxe,2,Direct,3986.0,15944.0,Confirmed,False,False,False,15944.0,False,False
+BK1144,Marigold Suites,2026-01-02,2,Deluxe,1,Walk-In,4368.0,8736.0,Cancelled,False,False,False,0.0,False,False
+BK1265,Lakeview Residency,2026-05-22,7,Deluxe,1,Corporate,7422.0,51954.0,No-Show,False,False,False,0.0,False,False
+BK1042,Palm Grove Inn,2026-02-26,7,Standard,4,Corporate,7043.0,49301.0,No-Show,False,False,False,0.0,False,False
+BK1229,Marigold Suites,2026-05-03,4,Standard,2,Direct,7594.0,30376.0,Cancelled,False,False,False,0.0,False,False
+BK1103,Cedar Court,2026-02-18,2,Standard,3,,4364.0,8728.0,Confirmed,False,False,False,8728.0,False,True
+BK1112,Lakeview Residency,2026-01-27,1,Standard,3,OTA-Booking,2942.0,2942.0,Confirmed,False,False,False,2942.0,False,False
+BK1253,Palm Grove Inn,2026-05-23,4,Deluxe,2,OTA-MMT,7638.0,30552.0,Checked-Out,False,False,False,30552.0,False,False
+BK1130,Marigold Suites,2026-05-17,2,Standard,2,Corporate,3581.0,7162.0,No-Show,False,False,False,0.0,False,False
+BK1122,Marigold Suites,2026-04-27,4,Deluxe,1,Direct,2947.0,11788.0,Confirmed,False,False,False,11788.0,False,False
+BK1024,Lakeview Residency,2026-03-20,1,Deluxe,3,OTA-MMT,5283.0,5283.0,Checked-Out,False,False,False,5283.0,False,False
+BK1119,Cedar Court,2026-03-16,5,Suite,2,Walk-In,3032.0,15160.0,Confirmed,False,False,False,15160.0,False,False
+BK1200,Lakeview Residency,2026-02-25,1,Deluxe,1,,3415.0,3415.0,Confirmed,False,False,False,3415.0,False,True
+BK1035,Lakeview Residency,2026-02-09,1,Standard,2,OTA-MMT,6946.0,6946.0,Confirmed,False,False,False,6946.0,False,False
+BK1222,Marigold Suites,2026-05-22,1,Suite,1,OTA-MMT,3222.0,3222.0,Confirmed,False,False,False,3222.0,False,False
+BK1048,Lakeview Residency,2026-02-27,5,Standard,4,,4498.0,22490.0,Confirmed,False,False,False,22490.0,False,True
+BK1201,Cedar Court,2026-05-08,5,Deluxe,2,Walk-In,3481.0,17405.0,Checked-Out,False,False,False,17405.0,False,False
+BK1021,Palm Grove Inn,2026-05-27,1,Standard,2,OTA-MMT,2742.0,2742.0,Checked-Out,False,False,False,2742.0,False,False
+BK1276,Lakeview Residency,2026-03-09,1,Standard,2,Corporate,5581.0,5581.0,Checked-Out,False,False,False,5581.0,False,False
+BK1238,Lakeview Residency,2026-03-19,5,Standard,2,OTA-MMT,5718.0,28590.0,Confirmed,True,False,False,28590.0,False,False
+BK1113,Marigold Suites,2026-04-28,1,Suite,1,OTA-MMT,3519.0,3519.0,Checked-Out,False,False,False,3519.0,False,False
+BK1041,Lakeview Residency,2026-03-21,1,Standard,1,,7309.0,7309.0,Checked-Out,False,False,False,7309.0,False,True
+BK1068,Palm Grove Inn,2026-03-16,7,Standard,1,OTA-MMT,4248.0,29736.0,Confirmed,False,False,False,29736.0,False,False
+BK1110,Lakeview Residency,2026-03-20,4,Standard,2,OTA-Booking,4443.0,17772.0,Checked-Out,False,False,False,17772.0,False,False
+BK1001,Marigold Suites,2026-02-05,1,Suite,2,Direct,,7058.0,Checked-Out,False,True,False,7058.0,False,False
+BK1284,Cedar Court,2026-03-27,1,Standard,1,OTA-MMT,3235.0,3235.0,Checked-Out,False,False,False,3235.0,False,False
+BK1007,Lakeview Residency,2026-03-13,3,Deluxe,1,Direct,2716.0,8148.0,Confirmed,False,False,False,8148.0,False,False
+BK1243,Lakeview Residency,2026-03-13,1,Deluxe,2,OTA-Booking,,6702.0,Checked-Out,False,True,False,6702.0,False,False
+BK1194,Palm Grove Inn,2026-01-18,7,Standard,2,OTA-MMT,,47705.0,Confirmed,False,True,False,47705.0,False,False
+BK1281,Lakeview Residency,2026-03-28,4,Deluxe,2,OTA-Booking,7602.0,30408.0,Cancelled,False,False,False,0.0,False,False
+BK1244,Marigold Suites,2026-03-11,2,Deluxe,3,OTA-MMT,4016.0,8032.0,Checked-Out,False,False,False,8032.0,False,False
+BK1029,Palm Grove Inn,2026-03-01,2,Deluxe,2,OTA-MMT,5236.0,10472.0,Confirmed,False,False,False,10472.0,False,False
+BK1013,Palm Grove Inn,2026-03-18,1,Deluxe,1,Corporate,5531.0,5531.0,Cancelled,False,False,False,0.0,False,False
+BK1160,Palm Grove Inn,2026-03-05,4,Standard,2,OTA-MMT,6575.0,26300.0,Confirmed,False,False,False,26300.0,False,False
+BK1239,Marigold Suites,2026-03-02,5,Suite,1,Corporate,7539.0,,Checked-Out,False,False,True,0.0,False,False
+BK1105,Palm Grove Inn,2026-03-07,1,Standard,3,Direct,7665.0,7665.0,No-Show,False,False,False,0.0,False,False
+BK1173,Birchwood Stay,2026-03-19,2,Suite,1,,6552.0,13104.0,Checked-Out,False,False,False,13104.0,False,True
+BK1161,Marigold Suites,2026-01-17,2,Deluxe,2,OTA-MMT,3368.0,6736.0,Confirmed,False,False,False,6736.0,False,False
+BK1065,Cedar Court,2026-05-12,5,Standard,2,Direct,7063.0,35315.0,Confirmed,False,False,False,35315.0,False,False
+BK1224,Marigold Suites,2026-02-19,5,Deluxe,2,Walk-In,7053.0,35265.0,Confirmed,False,False,False,35265.0,False,False
+BK1046,Marigold Suites,2026-03-11,1,Deluxe,2,Walk-In,3054.0,3054.0,Cancelled,False,False,False,0.0,False,False
+BK1278,Palm Grove Inn,2026-03-24,2,Deluxe,1,Direct,2906.0,5812.0,No-Show,False,False,False,0.0,False,False
+BK1183,Cedar Court,2026-01-25,1,Suite,2,Direct,7087.0,7087.0,Checked-Out,False,False,False,7087.0,False,False
+BK1240,Palm Grove Inn,2026-03-23,2,Standard,1,Direct,3225.0,6450.0,No-Show,False,False,False,0.0,False,False
+BK1267,Cedar Court,2026-01-26,2,Standard,1,Corporate,4295.0,8590.0,Cancelled,False,False,False,0.0,False,False
+BK1235,Birchwood Stay,2026-03-27,5,Suite,2,Corporate,3316.0,16580.0,No-Show,False,False,False,0.0,False,False
+BK1096,Palm Grove Inn,2026-05-12,3,Deluxe,4,OTA-MMT,6802.0,20406.0,No-Show,False,False,False,0.0,False,False
+BK1227,Lakeview Residency,2026-01-01,3,Suite,1,Direct,4268.0,12804.0,Confirmed,False,False,False,12804.0,False,False
+BK1270,Marigold Suites,2026-03-13,1,Deluxe,1,Corporate,3647.0,3647.0,Confirmed,False,False,False,3647.0,False,False
+BK1191,Cedar Court,2026-03-24,4,Standard,4,OTA-Booking,4462.0,17848.0,Checked-Out,False,False,False,17848.0,False,False
+BK1080,Palm Grove Inn,2026-03-02,2,Deluxe,3,Direct,5570.0,11140.0,No-Show,False,False,False,0.0,False,False
+BK1061,Palm Grove Inn,2026-03-28,2,Deluxe,2,OTA-MMT,7288.0,14576.0,Cancelled,False,False,False,0.0,False,False
+BK1059,Marigold Suites,2026-03-12,7,Standard,1,OTA-MMT,6656.0,46592.0,Confirmed,False,False,False,46592.0,False,False
+BK1116,Marigold Suites,2026-04-14,7,Deluxe,2,OTA-MMT,3361.0,23527.0,Checked-Out,False,False,False,23527.0,False,False
+BK1275,Marigold Suites,2026-04-12,5,Deluxe,2,Direct,3083.0,15415.0,Confirmed,False,False,False,15415.0,False,False
+BK1186,Palm Grove Inn,2026-04-09,2,Deluxe,1,,7315.0,14630.0,Confirmed,False,False,False,14630.0,False,True
+BK1268,Lakeview Residency,2026-03-14,0,Deluxe,4,Direct,5376.0,21504.0,No-Show,False,False,False,0.0,True,False
+BK1261,Marigold Suites,2026-04-01,1,Deluxe,4,Corporate,6851.0,6851.0,Checked-Out,False,False,False,6851.0,False,False
+BK1241,Lakeview Residency,2026-02-17,7,Suite,2,Walk-In,3687.0,25809.0,No-Show,False,False,False,0.0,False,False
+BK1171,Lakeview Residency,2026-02-20,2,Deluxe,2,,3526.0,7052.0,No-Show,False,False,False,0.0,False,True
+BK1092,Cedar Court,2026-01-10,4,Standard,1,Direct,3641.0,14564.0,Cancelled,False,False,False,0.0,False,False
+BK1081,Cedar Court,2026-01-21,2,Standard,2,,6662.0,,Confirmed,False,False,True,0.0,False,True
+BK1213,Palm Grove Inn,2026-02-24,7,Suite,2,OTA-Booking,3455.0,24185.0,Checked-Out,True,False,False,24185.0,False,False
+BK1031,Marigold Suites,2026-03-26,5,Standard,1,OTA-MMT,7454.0,37270.0,Checked-Out,False,False,False,37270.0,False,False
+BK1052,Cedar Court,2026-04-11,4,Suite,4,OTA-MMT,7588.0,30352.0,Checked-Out,False,False,False,30352.0,False,False
+BK1078,Lakeview Residency,2026-03-14,7,Standard,2,Direct,3610.0,25270.0,Checked-Out,False,False,False,25270.0,False,False
+BK1189,Lakeview Residency,2026-04-08,7,Standard,2,Corporate,7473.0,52311.0,Cancelled,False,False,False,0.0,False,False
+BK1251,Cedar Court,2026-05-24,7,Deluxe,2,Walk-In,5723.0,40061.0,No-Show,False,False,False,0.0,False,False
+BK1170,Marigold Suites,2026-03-18,4,Standard,2,OTA-MMT,7347.0,29388.0,Cancelled,False,False,False,0.0,False,False
+BK1154,Marigold Suites,2026-03-12,5,Deluxe,3,OTA-MMT,5233.0,26165.0,Checked-Out,False,False,False,26165.0,False,False
+BK1020,Marigold Suites,2026-02-07,2,Suite,2,OTA-MMT,5659.0,11318.0,Confirmed,False,False,False,11318.0,False,False
+BK1254,Birchwood Stay,2026-05-18,2,Deluxe,2,Direct,3499.0,6998.0,Cancelled,False,False,False,0.0,False,False
+BK1263,Marigold Suites,2026-03-10,2,Standard,1,OTA-MMT,,8072.0,Cancelled,False,True,False,0.0,False,False
+BK1011,Marigold Suites,2026-03-26,5,Standard,2,Direct,5265.0,26325.0,Checked-Out,False,False,False,26325.0,False,False
+BK1073,Marigold Suites,2026-05-10,7,Deluxe,3,Walk-In,2979.0,20853.0,Checked-Out,False,False,False,20853.0,False,False
+BK1192,Birchwood Stay,2026-05-23,4,Deluxe,1,OTA-MMT,3077.0,12308.0,No-Show,False,False,False,0.0,False,False
+BK1107,Marigold Suites,2026-04-02,0,Deluxe,4,OTA-Booking,2915.0,2915.0,Cancelled,False,False,False,0.0,True,False
+BK1009,Marigold Suites,2026-03-18,3,Deluxe,2,Walk-In,7098.0,21294.0,Checked-Out,False,False,False,21294.0,False,False
+BK1063,Lakeview Residency,2026-02-16,2,Standard,2,Direct,3464.0,6928.0,Cancelled,False,False,False,0.0,False,False
+BK1093,Marigold Suites,2026-05-22,2,Deluxe,1,OTA-MMT,4497.0,8994.0,No-Show,False,False,False,0.0,False,False
+BK1128,Marigold Suites,2026-03-21,1,Suite,2,Direct,5719.0,5719.0,Cancelled,False,False,False,0.0,False,False
+BK1108,Marigold Suites,2026-01-24,1,Standard,2,OTA-Booking,4359.0,4359.0,Confirmed,False,False,False,4359.0,False,False
+BK1163,Birchwood Stay,2026-03-01,1,Deluxe,3,Direct,7090.0,7090.0,Confirmed,False,False,False,7090.0,False,False
+BK1182,Marigold Suites,2026-04-04,2,Standard,2,OTA-MMT,3063.0,6126.0,Cancelled,False,False,False,0.0,False,False
+BK1114,Marigold Suites,2026-03-25,3,Deluxe,4,Direct,5431.0,16293.0,Cancelled,False,False,False,0.0,False,False
+BK1158,Cedar Court,2026-05-19,4,Standard,2,,4464.0,17856.0,Cancelled,False,False,False,0.0,False,True
+BK1288,Marigold Suites,2026-03-15,1,Suite,4,OTA-MMT,3487.0,3487.0,Confirmed,False,False,False,3487.0,False,False
+BK1156,Cedar Court,2026-05-10,7,Standard,4,Walk-In,3025.0,21175.0,Checked-Out,False,False,False,21175.0,False,False
+BK1117,Marigold Suites,2026-03-22,1,Deluxe,2,OTA-Booking,3653.0,3653.0,Confirmed,False,False,False,3653.0,False,False
+BK1233,Lakeview Residency,2026-03-05,3,Suite,2,,3405.0,10215.0,No-Show,False,False,False,0.0,False,True
+BK1255,Marigold Suites,2026-02-23,2,Standard,4,OTA-MMT,3049.0,6098.0,Cancelled,False,False,False,0.0,False,False
+BK1124,Cedar Court,2026-02-06,2,Deluxe,4,OTA-MMT,7277.0,14554.0,Cancelled,False,False,False,0.0,False,False
+BK1006,Lakeview Residency,2026-02-22,3,Suite,2,OTA-Booking,6573.0,19719.0,Cancelled,False,False,False,0.0,False,False
+BK1258,Cedar Court,2026-02-19,7,Deluxe,1,Direct,7551.0,52857.0,Confirmed,False,False,False,52857.0,False,False
+BK1175,Marigold Suites,2026-03-07,1,Standard,1,Corporate,4221.0,4221.0,Confirmed,False,False,False,4221.0,False,False
+BK1260,Marigold Suites,2026-03-21,3,Deluxe,3,Direct,6739.0,20217.0,Confirmed,False,False,False,20217.0,False,False
+BK1203,Palm Grove Inn,2026-03-26,4,Standard,1,,6926.0,27704.0,Cancelled,False,False,False,0.0,False,True
+BK1083,Marigold Suites,2026-03-09,1,Standard,4,Walk-In,3505.0,3505.0,Cancelled,False,False,False,0.0,False,False
+BK1169,Lakeview Residency,2026-01-19,2,Standard,1,Direct,3766.0,7532.0,No-Show,False,False,False,0.0,False,False
+BK1259,Marigold Suites,2026-04-07,2,Standard,4,,6809.0,13618.0,Confirmed,False,False,False,13618.0,False,True
