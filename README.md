@@ -4,7 +4,7 @@ A data-driven dashboard for Fernhill Stays, a boutique hotel group operating 5 p
 
 ## Live Dashboard
 
-🔗 **[View Live Dashboard](#)** *(deployment link to be added)*
+🔗 **[View Live Dashboard](https://fernhill-stays-dashboard-yrnwldbmxdykhk5wlthrkm.streamlit.app/)**
 
 ## Quick Start (Local)
 
