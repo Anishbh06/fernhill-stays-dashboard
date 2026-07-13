@@ -1,0 +1,239 @@
+booking_id,property,check_in_date,nights,room_type,guests,booking_channel,nightly_rate_inr,total_amount_inr,status
+BK1054,Marigold Suites,2026-01-25,1,Suite,1,Direct,7231,7231,Checked-out
+BK1150,cedar court,9 Mar 2026,1,Standard,2,direct,7576,7576,CHECKED OUT
+BK1206,Lakeview Residency,02/02/2026,3,DLX,1,OTA-MMT,3940,11820,CHECKED OUT
+BK1197,Lakeview Residency,03/04/2026,2,Std,1,ota-mmt,6856,13712,No-show
+BK1242,Marigold Suites ,2026-01-22,2,Suite,2,Direct,6749,13498,CHECKED OUT
+BK1118,Lakeview Residency,16 Mar 2026,3,Standard,2,ota-mmt,2725,81750,Cancelled
+BK1177,Marigold Suites,05-11-2026,7,DLX,1,OTA-Booking,5585,39095,Checked-out
+BK1025,Lakeview Residency,22/02/2026,3,Suite,1,Corporate,4223,12669,No-show
+BK1101,Palm grove inn,01-09-2026,1,Standard,2,direct,4277,4277,No-show
+BK1072,cedar court,2026-02-09,2,Standard,3,,4017,8034,CHECKED OUT
+BK1076,Birchwood Stay,21 Mar 2026,7,Deluxe,3,Direct,3385,23695,No-show
+BK1247,cedar court,17 Mar 2026,5,Deluxe,2,OTA-MMT,4041,20205,Cancelled
+BK1207,Palm Grove Inn,7 Mar 2026,2,Suite,1,Corporate,6620,13240,Cancelled
+BK1269,Marigold Suites,21/03/2026,5,Std,3,Direct,4311,21555,confirmed
+BK1138,Lakeview Residency,05-05-2026,3,Deluxe,2,ota-mmt,2992,8976,Checked-out
+BK1064,Palm grove inn,16 Mar 2026,2,Standard,2,Corporate,6987,13974,Checked-out
+BK1190,Cedar Court,03-06-2026,5,Standard,3,Direct,7014,35070,No-show
+BK1109,Palm grove inn,2 Mar 2026,7,Std,3,Walk-in,7611,53277,CHECKED OUT
+BK1246,Birchwood Stay,03-12-2026,7,DLX,2,ota-mmt,5376,37632,Confirmed
+BK1248,Palm grove inn,06/02/2026,4,Std,4,OTA-Booking,,30644,Cancelled
+BK1231,Lakeview Residency,2026-04-20,2,Deluxe,2,Walk-in,4009,,CHECKED OUT
+BK1036,Lakeview Residency,03-20-2026,4,Standard,2,ota-mmt,6627,26508,CHECKED OUT
+BK1147,Birchwood Stay,18 Mar 2026,4,Deluxe,3,direct,7379,29516,Confirmed
+BK1165,Lakeview Residency,03-24-2026,4,Suite,2,OTA-Booking,4033,16132,CHECKED OUT
+BK1172,Palm grove inn,27/04/2026,1,DLX,2,,3539,3539,Cancelled
+BK1087,MARIGOLD SUITES,19 Mar 2026,4,Standard,1,,7302,29208,Checked-out
+BK1157,Lakeview Residency,2026-05-10,3,Standard,4,direct,7361,22083,confirmed
+BK1225,Palm grove inn,04-08-2026,1,Standard,1,direct,3606,3606,Confirmed
+BK1023,Lakeview Residency,17/04/2026,2,Standard,4,Direct,3020,6040,confirmed
+BK1155,Birchwood Stay,11/04/2026,3,DLX,3,OTA-Booking,3016,9048,Cancelled
+BK1106,Lakeview Residency,2026-02-03,2,Deluxe,2,Corporate,5421,10842,confirmed
+BK1091,Palm grove inn,21 Mar 2026,3,DLX,1,Direct,2992,8976,Confirmed
+BK1214,Marigold Suites,3 Mar 2026,2,Deluxe,2,ota-mmt,2723,54460,CHECKED OUT
+BK1274,Palm grove inn,06/05/2026,4,Standard,2,direct,3161,12644,No-show
+BK1236,Palm Grove Inn,2026-01-27,5,Std,3,Corporate,7011,35055,Cancelled
+BK1004,Palm grove inn,05-07-2026,1,DLX,1,Walk-in,2733,2733,Cancelled
+BK1058,Lakeview Residency,04/02/2026,3,Standard,2,Corporate,7323,21969,confirmed
+BK1168,Marigold Suites,27/05/2026,7,Suite,4,Direct,3749,26243,No-show
+BK1102,Palm Grove Inn,20 Mar 2026,2,DLX,3,Direct,6564,13128,confirmed
+BK1034,Lakeview Residency,01-04-2026,3,DLX,1,ota-mmt,3494,10482,Cancelled
+BK1266,Lakeview Residency,03-21-2026,1,Deluxe,4,direct,,3466,Checked-out
+BK1290,MARIGOLD SUITES,2026-03-09,7,Deluxe,3,direct,2935,20545,Checked-out
+BK1218,MARIGOLD SUITES,02-08-2026,2,Standard,4,OTA-MMT,5739,11478,confirmed
+BK1049,cedar court,05-26-2026,2,Std,2,ota-mmt,4124,8248,confirmed
+BK1134,MARIGOLD SUITES,02-08-2026,2,Suite,4,Corporate,2979,5958,No-show
+BK1256,Birchwood Stay,04-03-2026,1,Std,3,Walk-in,4427,4427,No-show
+BK1044,Palm grove inn,04-15-2026,3,Deluxe,4,,7453,22359,CHECKED OUT
+BK1099,Palm grove inn,26/04/2026,3,Deluxe,2,Walk-in,6846,20538,Cancelled
+BK1272,MARIGOLD SUITES,26/03/2026,5,Standard,2,Walk-in,3736,18680,Confirmed
+BK1089,MARIGOLD SUITES,03-20-2026,5,Std,4,OTA-MMT,6582,32910,Cancelled
+BK1030,Marigold Suites,22 Mar 2026,1,Deluxe,2,direct,3773,3773,CHECKED OUT
+BK1014,Cedar Court,2026-01-03,7,Deluxe,1,Direct,7270,50890,confirmed
+BK1151,Palm Grove Inn,26/03/2026,1,Suite,2,,6934,6934,confirmed
+BK1082,Palm Grove Inn,17 Mar 2026,3,Deluxe,1,OTA-MMT,4394,13182,No-show
+BK1142,MARIGOLD SUITES,25/02/2026,7,Suite,1,Direct,3905,27335,No-show
+BK1199,Marigold Suites,7 Mar 2026,1,DLX,2,ota-mmt,2534,2534,Confirmed
+BK1085,Palm Grove Inn,19/02/2026,5,Deluxe,2,direct,3320,16600,CHECKED OUT
+BK1282,Birchwood Stay,15/02/2026,7,Deluxe,2,OTA-MMT,3616,25312,Confirmed
+BK1178,Birchwood Stay,03-18-2026,3,Deluxe,3,,3204,9612,Checked-out
+BK1003,Marigold Suites ,28/03/2026,4,Std,3,OTA-MMT,5470,21880,Confirmed
+BK1071,cedar court,18 Mar 2026,1,Deluxe,2,OTA-MMT,2902,2902,Checked-out
+BK1195,Marigold Suites,18/01/2026,1,Suite,2,ota-mmt,2983,2983,CHECKED OUT
+BK1145,MARIGOLD SUITES,2026-05-12,2,Std,3,Walk-in,5626,11252,Confirmed
+BK1193,MARIGOLD SUITES,22 Mar 2026,2,DLX,1,direct,7097,14194,No-show
+BK1026,Palm grove inn,02-12-2026,1,DLX,1,Corporate,3278,3278,Cancelled
+BK1137,Birchwood Stay,2026-05-08,3,Std,2,Walk-in,7680,23040,Checked-out
+BK1250,Palm grove inn,14/04/2026,7,Std,2,,4071,-28497,CHECKED OUT
+BK1017,Marigold Suites,2026-01-02,4,Standard,2,OTA-MMT,3026,12104,Checked-out
+BK1094,Palm Grove Inn,15 Mar 2026,4,DLX,3,Walk-in,5506,22024,Checked-out
+BK1152,Marigold Suites ,2026-03-10,7,Suite,3,OTA-MMT,5636,39452,CHECKED OUT
+BK1220,Palm Grove Inn,21 Mar 2026,0,Deluxe,2,Corporate,2915,2915,Cancelled
+BK1131,Marigold Suites ,04-10-2026,3,Standard,1,direct,6653,19959,confirmed
+BK1069,Lakeview Residency,01-05-2026,2,Standard,1,,7776,15552,confirmed
+BK1120,Marigold Suites ,15 Mar 2026,1,Standard,2,ota-mmt,7520,7520,No-show
+BK1070,Palm grove inn,28/03/2026,5,Std,2,ota-mmt,3782,18910,No-show
+BK1138,Lakeview Residency,05-05-2026,3,Deluxe,2,ota-mmt,2992,8976,Checked-out
+BK1066,Cedar Court,25 Mar 2026,2,Standard,2,direct,3121,6242,CHECKED OUT
+BK1271,cedar court,02-23-2026,1,Standard,2,OTA-Booking,3408,3408,Confirmed
+BK1153,Birchwood Stay,2026-01-03,5,Suite,1,ota-mmt,3725,18625,CHECKED OUT
+BK1149,Marigold Suites,2 Mar 2026,4,Deluxe,4,Walk-in,3727,14908,Confirmed
+BK1040,Marigold Suites ,5 Mar 2026,1,Suite,2,Corporate,2750,2750,Checked-out
+BK1162,Marigold Suites ,09/05/2026,2,Deluxe,2,Walk-in,6810,13620,CHECKED OUT
+BK1012,Marigold Suites ,03-14-2026,2,Suite,2,Walk-in,3903,7806,Confirmed
+BK1039,Birchwood Stay,2026-04-22,2,Std,3,direct,5684,11368,No-show
+BK1033,Cedar Court,2026-03-27,2,Std,2,Corporate,2924,5848,Cancelled
+BK1204,Cedar Court,2026-01-18,5,Deluxe,2,Walk-in,4470,22350,No-show
+BK1002,Palm grove inn,2026-02-15,3,DLX,3,Corporate,7206,21618,No-show
+BK1164,Palm Grove Inn,26/02/2026,5,Suite,3,Walk-in,3664,183200,No-show
+BK1129,Palm Grove Inn,17/04/2026,2,Suite,4,Corporate,2961,5922,confirmed
+BK1044,Palm grove inn,04-15-2026,3,Deluxe,4,,7453,22359,CHECKED OUT
+BK1111,Palm grove inn,14 Mar 2026,4,Std,2,Corporate,7664,30656,No-show
+BK1226,Lakeview Residency,2026-05-22,5,Std,3,ota-mmt,2802,14010,Checked-out
+BK1016,Cedar Court,2026-03-15,7,Suite,1,Corporate,2753,19271,No-show
+BK1135,Lakeview Residency,6 Mar 2026,2,DLX,1,OTA-Booking,7369,14738,No-show
+BK1027,Palm grove inn,2026-03-04,1,Standard,2,Walk-in,7066,7066,Checked-out
+BK1141,Marigold Suites,13/02/2026,1,DLX,2,ota-mmt,3429,3429,Cancelled
+BK1277,Lakeview Residency,11/03/2026,1,Std,2,OTA-MMT,5667,5667,Cancelled
+BK1037,Palm grove inn,04-22-2026,2,Deluxe,2,OTA-Booking,,11564,No-show
+BK1210,Lakeview Residency,02/04/2026,2,Suite,2,Corporate,6649,13298,Cancelled
+BK1179,Palm grove inn,2026-05-22,5,Suite,2,Walk-in,4253,-21265,Confirmed
+BK1056,Marigold Suites ,2026-03-25,4,Std,2,Corporate,,12068,CHECKED OUT
+BK1181,cedar court,2026-05-09,3,Deluxe,1,,3011,90330,Checked-out
+BK1252,Palm grove inn,02-14-2026,1,Std,4,Direct,6753,6753,confirmed
+BK1019,Cedar Court,4 Mar 2026,5,Std,2,,3633,18165,Checked-out
+BK1146,Lakeview Residency,04-12-2026,3,Standard,4,,6516,195480,CHECKED OUT
+BK1167,Cedar Court,16/04/2026,3,Std,2,OTA-Booking,3923,11769,confirmed
+BK1184,Lakeview Residency,04-06-2026,3,Standard,2,OTA-Booking,2509,7527,No-show
+BK1104,Lakeview Residency,2026-04-09,1,Std,2,OTA-MMT,6879,6879,confirmed
+BK1133,MARIGOLD SUITES,21/04/2026,0,Suite,3,OTA-MMT,7330,29320,confirmed
+BK1285,cedar court,2026-04-28,7,Deluxe,1,Walk-in,5763,40341,Confirmed
+BK1216,Palm Grove Inn,05-14-2026,1,Standard,2,Direct,,3042,confirmed
+BK1208,Palm grove inn,04-18-2026,4,Suite,2,direct,3467,13868,No-show
+BK1028,Palm grove inn,21/01/2026,5,Suite,1,,7483,37415,Confirmed
+BK1097,Birchwood Stay,05-26-2026,4,Suite,3,,3094,12376,Checked-out
+BK1126,Birchwood Stay,04-03-2026,7,Suite,2,direct,4210,294700,Checked-out
+BK1139,cedar court,17/04/2026,2,Deluxe,1,OTA-MMT,7647,15294,Cancelled
+BK1067,Marigold Suites ,2026-03-06,3,Suite,2,Corporate,3046,-9138,Checked-out
+BK1098,Marigold Suites ,19/01/2026,4,Suite,2,Direct,6634,26536,No-show
+BK1115,Birchwood Stay,23/03/2026,3,Standard,1,Walk-in,3559,10677,Checked-out
+BK1198,Marigold Suites,2026-05-14,5,Suite,2,Direct,7435,37175,No-show
+BK1211,MARIGOLD SUITES,04-19-2026,2,Suite,2,Corporate,4463,8926,Checked-out
+BK1028,Palm grove inn,21/01/2026,5,Suite,1,,7483,37415,Confirmed
+BK1022,MARIGOLD SUITES,26 Mar 2026,7,Standard,1,ota-mmt,3633,25431,No-show
+BK1187,Lakeview Residency,02-06-2026,5,DLX,1,Walk-in,7637,38185,CHECKED OUT
+BK1279,Lakeview Residency,4 Mar 2026,2,Std,2,Direct,5443,10886,CHECKED OUT
+BK1221,Marigold Suites ,2026-03-19,1,Std,1,,5243,5243,CHECKED OUT
+BK1051,MARIGOLD SUITES,01/05/2026,5,Deluxe,1,,5777,28885,confirmed
+BK1123,Lakeview Residency,2026-01-17,1,Suite,4,Corporate,5722,5722,Checked-out
+BK1166,Palm Grove Inn,2026-01-10,5,Deluxe,4,Corporate,7628,38140,Confirmed
+BK1075,Marigold Suites ,2026-03-20,3,Std,3,Direct,2593,7779,CHECKED OUT
+BK1230,Birchwood Stay,2026-02-09,3,Std,1,OTA-Booking,3704,11112,Checked-out
+BK1257,Birchwood Stay,21 Mar 2026,4,Standard,1,Direct,7264,29056,CHECKED OUT
+BK1286,Marigold Suites,04-12-2026,1,Deluxe,4,Corporate,5800,5800,Checked-out
+BK1280,Marigold Suites ,23/04/2026,4,Deluxe,2,Direct,3986,15944,confirmed
+BK1144,Marigold Suites ,02/01/2026,2,Deluxe,1,Walk-in,4368,8736,Cancelled
+BK1265,Lakeview Residency,22/05/2026,7,Deluxe,1,Corporate,7422,51954,No-show
+BK1042,Palm grove inn,02-26-2026,7,Standard,4,Corporate,7043,49301,No-show
+BK1229,Marigold Suites ,03/05/2026,4,Standard,2,Direct,7594,30376,Cancelled
+BK1103,cedar court,02-18-2026,2,Standard,3,,4364,8728,Confirmed
+BK1112,Lakeview Residency,27/01/2026,1,Std,3,OTA-Booking,2942,2942,Confirmed
+BK1253,Palm Grove Inn,2026-05-23,4,Deluxe,2,OTA-MMT,7638,30552,Checked-out
+BK1130,Marigold Suites,05-17-2026,2,Std,2,Corporate,3581,7162,No-show
+BK1122,Marigold Suites,27/04/2026,4,Deluxe,1,direct,2947,11788,confirmed
+BK1024,Lakeview Residency,20 Mar 2026,1,DLX,3,OTA-MMT,5283,5283,Checked-out
+BK1119,cedar court,16 Mar 2026,5,Suite,2,Walk-in,3032,15160,Confirmed
+BK1200,Lakeview Residency,02-25-2026,1,Deluxe,1,,3415,3415,confirmed
+BK1035,Lakeview Residency,09/02/2026,1,Std,2,OTA-MMT,6946,6946,confirmed
+BK1222,Marigold Suites,22/05/2026,1,Suite,1,OTA-MMT,3222,3222,confirmed
+BK1048,Lakeview Residency,27/02/2026,5,Std,4,,4498,22490,Confirmed
+BK1201,Cedar Court,08/05/2026,5,Deluxe,2,Walk-in,3481,17405,CHECKED OUT
+BK1021,Palm Grove Inn,2026-05-27,1,Standard,2,OTA-MMT,2742,2742,CHECKED OUT
+BK1276,Lakeview Residency,09/03/2026,1,Std,2,Corporate,5581,5581,CHECKED OUT
+BK1238,Lakeview Residency,19 Mar 2026,5,Std,2,OTA-MMT,5718,-28590,confirmed
+BK1113,Marigold Suites ,04-28-2026,1,Suite,1,ota-mmt,3519,3519,CHECKED OUT
+BK1041,Lakeview Residency,21 Mar 2026,1,Std,1,,7309,7309,Checked-out
+BK1068,Palm Grove Inn,2026-03-16,7,Standard,1,OTA-MMT,4248,29736,confirmed
+BK1110,Lakeview Residency,03-20-2026,4,Standard,2,OTA-Booking,4443,17772,Checked-out
+BK1001,Marigold Suites ,05/02/2026,1,Suite,2,Direct,,7058,Checked-out
+BK1284,cedar court,2026-03-27,1,Standard,1,OTA-MMT,3235,3235,Checked-out
+BK1207,Palm Grove Inn,7 Mar 2026,2,Suite,1,Corporate,6620,13240,Cancelled
+BK1007,Lakeview Residency,03-13-2026,3,Deluxe,1,Direct,2716,8148,Confirmed
+BK1243,Lakeview Residency,13 Mar 2026,1,Deluxe,2,OTA-Booking,,6702,CHECKED OUT
+BK1194,Palm grove inn,18/01/2026,7,Std,2,ota-mmt,,47705,confirmed
+BK1281,Lakeview Residency,03-28-2026,4,Deluxe,2,OTA-Booking,7602,30408,Cancelled
+BK1244,Marigold Suites ,03-11-2026,2,DLX,3,OTA-MMT,4016,8032,Checked-out
+BK1029,Palm Grove Inn,01-03-2026,2,DLX,2,ota-mmt,5236,10472,Confirmed
+BK1013,Palm grove inn,18 Mar 2026,1,Deluxe,1,Corporate,5531,5531,Cancelled
+BK1160,Palm grove inn,5 Mar 2026,4,Std,2,ota-mmt,6575,26300,confirmed
+BK1239,Marigold Suites ,2 Mar 2026,5,Suite,1,Corporate,7539,,Checked-out
+BK1105,Palm grove inn,07/03/2026,1,Standard,3,direct,7665,7665,No-show
+BK1173,Birchwood Stay,19 Mar 2026,2,Suite,1,,6552,13104,CHECKED OUT
+BK1161,MARIGOLD SUITES,2026-01-17,2,DLX,2,ota-mmt,3368,6736,Confirmed
+BK1065,cedar court,05-12-2026,5,Std,2,direct,7063,35315,confirmed
+BK1224,Marigold Suites ,02-19-2026,5,Deluxe,2,Walk-in,7053,35265,confirmed
+BK1046,Marigold Suites ,2026-03-11,1,Deluxe,2,Walk-in,3054,3054,Cancelled
+BK1278,Palm Grove Inn,24 Mar 2026,2,DLX,1,direct,2906,5812,No-show
+BK1183,cedar court,2026-01-25,1,Suite,2,direct,7087,7087,CHECKED OUT
+BK1240,Palm Grove Inn,23 Mar 2026,2,Std,1,direct,3225,6450,No-show
+BK1267,Cedar Court,26/01/2026,2,Std,1,Corporate,4295,8590,Cancelled
+BK1235,Birchwood Stay,2026-03-27,5,Suite,2,Corporate,3316,16580,No-show
+BK1096,Palm Grove Inn,12/05/2026,3,Deluxe,4,OTA-MMT,6802,20406,No-show
+BK1227,Lakeview Residency,01-01-2026,3,Suite,1,direct,4268,12804,Confirmed
+BK1270,Marigold Suites ,2026-03-13,1,Deluxe,1,Corporate,3647,3647,confirmed
+BK1191,Cedar Court,24 Mar 2026,4,Std,4,OTA-Booking,4462,17848,Checked-out
+BK1080,Palm grove inn,2 Mar 2026,2,DLX,3,Direct,5570,11140,No-show
+BK1061,Palm Grove Inn,03-28-2026,2,DLX,2,ota-mmt,7288,14576,Cancelled
+BK1059,Marigold Suites,12 Mar 2026,7,Std,1,ota-mmt,6656,46592,Confirmed
+BK1116,Marigold Suites,04-14-2026,7,DLX,2,OTA-MMT,3361,23527,Checked-out
+BK1275,Marigold Suites,12/04/2026,5,Deluxe,2,Direct,3083,15415,Confirmed
+BK1186,Palm grove inn,04-09-2026,2,Deluxe,1,,7315,14630,confirmed
+BK1268,Lakeview Residency,14 Mar 2026,0,Deluxe,4,direct,5376,21504,No-show
+BK1261,MARIGOLD SUITES,01/04/2026,1,DLX,4,Corporate,6851,6851,CHECKED OUT
+BK1241,Lakeview Residency,17/02/2026,7,Suite,2,Walk-in,3687,25809,No-show
+BK1171,Lakeview Residency,2026-02-20,2,DLX,2,,3526,7052,No-show
+BK1092,cedar court,2026-01-10,4,Standard,1,Direct,3641,14564,Cancelled
+BK1081,cedar court,01-21-2026,2,Std,2,,6662,,Confirmed
+BK1213,Palm Grove Inn,24/02/2026,7,Suite,2,OTA-Booking,3455,-24185,Checked-out
+BK1068,Palm Grove Inn,2026-03-16,7,Standard,1,OTA-MMT,4248,29736,confirmed
+BK1031,MARIGOLD SUITES,03-26-2026,5,Standard,1,ota-mmt,7454,37270,Checked-out
+BK1052,cedar court,04-11-2026,4,Suite,4,ota-mmt,7588,30352,Checked-out
+BK1078,Lakeview Residency,14/03/2026,7,Standard,2,direct,3610,25270,Checked-out
+BK1189,Lakeview Residency,04-08-2026,7,Standard,2,Corporate,7473,52311,Cancelled
+BK1251,Cedar Court,24/05/2026,7,Deluxe,2,Walk-in,5723,40061,No-show
+BK1285,cedar court,2026-04-28,7,Deluxe,1,Walk-in,5763,40341,Confirmed
+BK1170,MARIGOLD SUITES,2026-03-18,4,Std,2,OTA-MMT,7347,29388,Cancelled
+BK1154,MARIGOLD SUITES,2026-03-12,5,Deluxe,3,OTA-MMT,5233,26165,CHECKED OUT
+BK1020,Marigold Suites,2026-02-07,2,Suite,2,ota-mmt,5659,11318,Confirmed
+BK1096,Palm Grove Inn,12/05/2026,3,Deluxe,4,OTA-MMT,6802,20406,No-show
+BK1254,Birchwood Stay,05-18-2026,2,DLX,2,direct,3499,6998,Cancelled
+BK1263,Marigold Suites ,2026-03-10,2,Standard,1,OTA-MMT,,8072,Cancelled
+BK1011,Marigold Suites ,26 Mar 2026,5,Standard,2,Direct,5265,26325,Checked-out
+BK1073,MARIGOLD SUITES,05-10-2026,7,DLX,3,Walk-in,2979,20853,CHECKED OUT
+BK1192,Birchwood Stay,23/05/2026,4,DLX,1,OTA-MMT,3077,12308,No-show
+BK1107,MARIGOLD SUITES,02-04-2026,0,DLX,4,OTA-Booking,2915,2915,Cancelled
+BK1009,MARIGOLD SUITES,18 Mar 2026,3,Deluxe,2,Walk-in,7098,21294,Checked-out
+BK1063,Lakeview Residency,02-16-2026,2,Std,2,Direct,3464,6928,Cancelled
+BK1093,MARIGOLD SUITES,2026-05-22,2,DLX,1,OTA-MMT,4497,8994,No-show
+BK1128,Marigold Suites,21 Mar 2026,1,Suite,2,Direct,5719,5719,Cancelled
+BK1108,Marigold Suites,01-24-2026,1,Std,2,OTA-Booking,4359,4359,confirmed
+BK1163,Birchwood Stay,01-03-2026,1,DLX,3,direct,7090,7090,Confirmed
+BK1182,Marigold Suites,2026-04-04,2,Std,2,OTA-MMT,3063,6126,Cancelled
+BK1114,Marigold Suites ,25 Mar 2026,3,DLX,4,direct,5431,16293,Cancelled
+BK1158,Cedar Court,2026-05-19,4,Standard,2,,4464,17856,Cancelled
+BK1288,MARIGOLD SUITES,15 Mar 2026,1,Suite,4,OTA-MMT,3487,3487,Confirmed
+BK1126,Birchwood Stay,04-03-2026,7,Suite,2,direct,4210,294700,Checked-out
+BK1156,cedar court,2026-05-10,7,Std,4,Walk-in,3025,21175,Checked-out
+BK1117,Marigold Suites,22 Mar 2026,1,Deluxe,2,OTA-Booking,3653,3653,confirmed
+BK1233,Lakeview Residency,5 Mar 2026,3,Suite,2,,3405,10215,No-show
+BK1255,MARIGOLD SUITES,02-23-2026,2,Standard,4,ota-mmt,3049,6098,Cancelled
+BK1124,Cedar Court,2026-02-06,2,Deluxe,4,OTA-MMT,7277,14554,Cancelled
+BK1006,Lakeview Residency,2026-02-22,3,Suite,2,OTA-Booking,6573,19719,Cancelled
+BK1258,cedar court,19/02/2026,7,DLX,1,direct,7551,52857,confirmed
+BK1175,MARIGOLD SUITES,7 Mar 2026,1,Standard,1,Corporate,4221,4221,confirmed
+BK1260,Marigold Suites ,21 Mar 2026,3,Deluxe,3,direct,6739,20217,Confirmed
+BK1203,Palm grove inn,26 Mar 2026,4,Standard,1,,6926,27704,Cancelled
+BK1083,Marigold Suites ,9 Mar 2026,1,Std,4,Walk-in,3505,3505,Cancelled
+BK1169,Lakeview Residency,01-19-2026,2,Standard,1,direct,3766,7532,No-show
+BK1259,MARIGOLD SUITES,2026-04-07,2,Std,4,,6809,13618,Confirmed
