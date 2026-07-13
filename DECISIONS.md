@@ -7,7 +7,7 @@ This document outlines the data issues I identified in `bookings_jan_may_2026.cs
 I wrote an audit script (`clean_data.py`) that processes the raw dataset in a strict sequence. The ordering matters — I fixed things that silently corrupt money math first, cosmetic normalisation second, and edge-case flagging last.
 
 ### 1. Duplicates (8 rows removed)
-- **What I found**: 8 completely identical rows in the 238-row dataset. Some booking IDs appeared twice with the exact same data across every column (e.g. BK1028, BK1044, BK1068, BK1096, BK1126, BK1138, BK1207, BK1285).
+- **What I found**: 8 completely identical rows in the 238-row raw dataset (reduced to 230 after dedup). Some booking IDs appeared twice with the exact same data across every column (e.g. BK1028, BK1044, BK1068, BK1096, BK1126, BK1138, BK1207, BK1285).
 - **How I handled it**: `df.drop_duplicates()` right at the start, before any math.
 - **Why this is Step 1**: If a booking is counted twice, every downstream metric — revenue, occupancy, health score — is silently inflated. This has to go first.
 

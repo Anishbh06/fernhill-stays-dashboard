@@ -55,7 +55,7 @@ This document covers testing performed on the Fernhill Stays dashboard before cl
 ### Test 2.4: All filters deselected
 - **What I tested**: What happens if a user deselects all properties or all months in the sidebar?
 - **How**: Unchecked all property filters in the sidebar.
-- **Result**: ⚠️ The dashboard shows empty charts with no data. It does not crash, but it also doesn't show a helpful "No data selected" message. See "Unfixed" section below.
+- **Result**: ✅ The dashboard shows a clear warning ("No data matches the selected filters. Please adjust your selections.") and stops rendering charts. No crash, no empty/misleading charts.
 
 ---
 
@@ -78,7 +78,7 @@ This document covers testing performed on the Fernhill Stays dashboard before cl
 
 ### Test 3.4: Charts use cleaned data
 - **What I tested**: Confirmed the dashboard reads `data/bookings_clean.csv`, not the raw file.
-- **How**: Checked line 18 of `app.py`: `df = pd.read_csv("data/bookings_clean.csv")`.
+- **How**: Checked line 16 of `app.py`: `df = pd.read_csv("data/bookings_clean.csv")`.
 - **Result**: ✅ Dashboard runs on cleaned data only. This is the assignment's #1 red flag and we avoid it.
 
 ---
@@ -97,11 +97,11 @@ This document covers testing performed on the Fernhill Stays dashboard before cl
 
 ## 5. What I Chose NOT to Fix (and Why)
 
-### Empty filter state
-When a user deselects all properties in the sidebar, the dashboard shows empty charts instead of a helpful message. I chose not to fix this because:
-- It doesn't crash or show incorrect data.
-- The default state (all selected) works correctly.
-- Adding empty-state messages is a UX polish item, not a data integrity issue, and the assignment says "clean and usable beats beautiful."
+### No loading state indicator
+When the page first loads or when the cache is cleared, there is a brief flash before charts render. Streamlit does not natively support custom loading spinners inside tabs without additional JavaScript. I chose not to fix this because:
+- The load time is under 1 second with 230 rows — it's barely noticeable.
+- Adding a custom spinner would require injecting JavaScript, which adds complexity without meaningful user benefit for this dataset size.
+- The assignment says "clean and usable beats beautiful."
 
 ### Zero-night bookings not corrected
 The 4 rows with `nights = 0` are flagged but not corrected (e.g., I don't guess what the nights should be). I chose to leave them as anomalies because:
