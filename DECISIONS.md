@@ -75,7 +75,7 @@ Health Score = (0.30 × Occupancy) + (0.25 × Revenue) + (0.25 × Cancellation) 
 
 | Property | Occupancy | Revenue | Cancellation | Rate | **Health Score** |
 |---|---|---|---|---|---|
-| Marigold Suites | 100.0 | 100.0 | 100.0 | 86.4 | **97.3** ✅ |
+| Marigold Suites | 100.0 | 100.0 | 100.0 | 85.5 | **97.1** ✅ |
 | Cedar Court | 45.8 | 46.5 | 82.1 | 86.6 | **63.2** |
 | Lakeview Residency | 47.6 | 48.5 | 62.7 | 92.3 | **60.6** |
 | Birchwood Stay | 31.5 | 31.8 | 74.4 | 91.6 | **54.3** |
@@ -119,7 +119,7 @@ The data reveals something the client should act on immediately:
 - This suggests the Corporate channel relationships may need renegotiation or the Corporate booking process has a confirmation gap.
 
 ### Revenue Lost metric
-I added a "Revenue Lost" KPI (₹16.5L lost to cancellations) because showing only realized revenue hides the cost of the cancellation problem. The client asked "where to focus" — knowing that cancellations are costing ₹16.5L makes the case for intervention concrete.
+I added a "Revenue Lost" KPI (₹13.7L lost to cancellations) because showing only realized revenue hides the cost of the cancellation problem. The client asked "where to focus" — knowing that cancellations are costing ₹13.7L makes the case for intervention concrete.
 
 ### Edge case handling
 - **Zero-night bookings** (4 rows): Excluded from Average Daily Rate calculations to prevent division by zero.

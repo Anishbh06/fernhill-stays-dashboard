@@ -55,7 +55,7 @@ The AI's first dashboard version had no empty-state handling. If a user unchecke
 **How I caught it**: During the final audit I asked the AI to check edge cases in the UI. It found the division-by-zero risk and added a `st.stop()` guard with a user-friendly warning message.
 
 ### Mistake 7: No "Revenue Lost" metric
-The AI's first dashboard only showed "Realized Revenue" — what was earned. But the client also needs to know how much money was *lost* to cancellations and no-shows. Without that number, the 37% cancellation rate is abstract; with it (₹16.5L lost), the client can quantify the problem.
+The AI's first dashboard only showed "Realized Revenue" — what was earned. But the client also needs to know how much money was *lost* to cancellations and no-shows. Without that number, the 37% cancellation rate is abstract; with it (₹13.7L lost), the client can quantify the problem.
 
 **How I caught it**: During the dashboard audit, I reviewed each chart against the client's actual questions. "Where to focus" implies the client needs to see the cost of inaction — not just what's working but what's failing and how much it's costing.
 
