@@ -10,7 +10,7 @@ A data-driven dashboard for Fernhill Stays, a boutique hotel group operating 5 p
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/fernhill-stays-dashboard.git
+git clone https://github.com/Anishbh06/fernhill-stays-dashboard.git
 cd fernhill-stays-dashboard
 
 # 2. Install dependencies
