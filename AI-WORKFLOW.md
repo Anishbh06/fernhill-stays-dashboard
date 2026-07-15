@@ -1,11 +1,13 @@
 # AI Workflow Log
 
 ## Tools Used
-- **AI assistants (Gemini Code Assist / Cursor)**: Drafted the data cleaning script, dashboard code, audit helpers for cross-checking numbers, and initial documentation. Every output was manually reviewed against the raw CSV and corrected (see mistakes below).
-- **Python 3.11 + Pandas / Plotly / Streamlit**: Data pipeline and dashboard. Chosen because the client asked for a simple dashboard — Streamlit is the fastest reliable path from CSV to a deployed interactive app.
-- **GitHub Desktop + Git CLI**: Branch-per-feature workflow (`feature/data-cleaning`, `feature/health-score-dashboard`). Changes were reviewed before merging to `main`.
-- **VS Code / Cursor**: Code editing, comparing AI output to the raw data, and reading the CSV directly.
-- **Streamlit Cloud**: Free deployment, connected to the GitHub repo for continuous updates.
+- **Gemini Code Assist (AI assistant)**: Used as my primary thought partner for the architecture, data pipeline logic, generating the health score formula, and running deep audits against the raw data. Every output was manually reviewed and corrected (see mistakes below).
+- **Cursor (AI Code Editor)**: Used for rapid inline code refactoring, polishing documentation, and generating precise git commits.
+- **Python 3.11 + Pandas/Plotly/Streamlit**: Data pipeline and dashboard. Chosen because the client asked for a "simple dashboard" — Streamlit is the fastest path from CSV to deployed interactive app.
+- **GitHub Desktop + Git CLI**: Branch-per-feature workflow (`feature/data-cleaning`, `feature/health-score-dashboard`). Each branch was reviewed before merging to main.
+- **VS Code**: Code editing, reviewing AI outputs side-by-side with raw data, and reading the CSV directly.
+- **Streamlit Cloud**: Free deployment, connected to the GitHub repo for automatic updates.
+
 
 ## Prompts That Mattered
 
