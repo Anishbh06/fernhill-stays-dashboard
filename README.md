@@ -6,6 +6,10 @@ A data-driven dashboard for Fernhill Stays, a boutique hotel group with 5 proper
 
 **[Open live dashboard](https://fernhill-stays-dashboard-yrnwtdbmxdykhk5wlthrkm.streamlit.app/)**
 
+**Watch the frontend UI Demo:** https://www.loom.com/share/8380ed4d4ef548418343beb349c47717
+
+> 5-minute walkthrough explaining about the dashboard and the key decisions taken while building it.
+
 ## Key Findings (Jan–May 2026)
 
 | Finding | Detail |
